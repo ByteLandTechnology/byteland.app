@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <!-- Defs for gradients -->
+  <defs>
+    <!-- Brand Colors -->
+    <color id="blue" value="#007AFF" />
+    <color id="green" value="#34C759" />
+    <color id="red" value="#FF3B30" />
+
+    <!-- Tri-color Gradient -->
+    <linearGradient id="gradTri" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#007AFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#34C759;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF3B30;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="gradItem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="#ffffff" rx="10" />
+
+  <!-- Connector Lines -->
+  <path d="M300 200 L150 100" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M300 200 L450 100" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M300 200 L150 300" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M300 200 L450 300" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Central Hub -->
+  <!-- CHANGED: Text fill is now url(#gradTri) -->
+  <circle cx="300" cy="200" r="60" fill="#ffffff" stroke="url(#gradTri)" stroke-width="4" filter="url(#shadow)" />
+  <text x="300" y="205" font-family="'Exo 2', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"
+    fill="url(#gradTri)">Mastra</text>
+
+  <!-- Feature 1: Top Left (Blue) -->
+  <rect x="90" y="70" width="120" height="60" rx="8" fill="url(#gradItem)" stroke="#007AFF" stroke-width="2"
+    filter="url(#shadow)" />
+  <text x="150" y="95" font-family="'Exo 2', sans-serif" font-size="12" font-weight="bold" text-anchor="middle"
+    fill="#007AFF">TypeScript</text>
+  <text x="150" y="115" font-family="'Exo 2', sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Type-Safe
+    Agents</text>
+
+  <!-- Feature 2: Top Right (Green) -->
+  <rect x="390" y="70" width="120" height="60" rx="8" fill="url(#gradItem)" stroke="#34C759" stroke-width="2"
+    filter="url(#shadow)" />
+  <text x="450" y="95" font-family="'Exo 2', sans-serif" font-size="12" font-weight="bold" text-anchor="middle"
+    fill="#34C759">Workflows</text>
+  <text x="450" y="115" font-family="'Exo 2', sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Graph-based
+    Control</text>
+
+  <!-- Feature 3: Bottom Left (Red) -->
+  <rect x="90" y="270" width="120" height="60" rx="8" fill="url(#gradItem)" stroke="#FF3B30" stroke-width="2"
+    filter="url(#shadow)" />
+  <text x="150" y="295" font-family="'Exo 2', sans-serif" font-size="12" font-weight="bold" text-anchor="middle"
+    fill="#FF3B30">Model Agnostic</text>
+  <text x="150" y="315" font-family="'Exo 2', sans-serif" font-size="10" text-anchor="middle" fill="#64748b">OpenAI,
+    Claude, etc.</text>
+
+  <!-- Feature 4: Bottom Right (Blue) -->
+  <rect x="390" y="270" width="120" height="60" rx="8" fill="url(#gradItem)" stroke="#007AFF" stroke-width="2"
+    filter="url(#shadow)" />
+  <text x="450" y="295" font-family="'Exo 2', sans-serif" font-size="12" font-weight="bold" text-anchor="middle"
+    fill="#007AFF">Local-First RAG</text>
+  <text x="450" y="315" font-family="'Exo 2', sans-serif" font-size="10" text-anchor="middle" fill="#64748b">Built-in
+    Vector Utils</text>
+</svg>

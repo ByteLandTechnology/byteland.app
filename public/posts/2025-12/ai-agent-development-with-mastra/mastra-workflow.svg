@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Theme Colors -->
+    <color id="blue" value="#007AFF" />
+    <color id="green" value="#34C759" />
+    <color id="red" value="#FF3B30" />
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc" rx="10" />
+
+  <text x="400" y="40" font-family="'Exo 2', sans-serif" font-size="24" font-weight="bold" text-anchor="middle"
+    fill="#1e293b">Agent Workflow: Support Triage</text>
+
+  <!-- Nodes -->
+
+  <!-- A: User Request -->
+  <!-- Position: y=60 (unchanged) -->
+  <g transform="translate(325, 60)">
+    <rect width="150" height="50" rx="25" fill="#fff" stroke="#007AFF" stroke-width="2" filter="url(#shadow)" />
+    <text x="75" y="30" font-family="'Exo 2', sans-serif" font-size="14" text-anchor="middle" fill="#334155">📩 User
+      Request</text>
+  </g>
+
+  <!-- B: Classifier Agent -->
+  <!-- Position: old y=160, new y=210. Moved down 50px. -->
+  <g transform="translate(400, 210)">
+    <!-- Diamond Shape -->
+    <polygon points="0,-40 50,0 0,40 -50,0" fill="#e0f2fe" stroke="#007AFF" stroke-width="2" filter="url(#shadow)" />
+    <text x="0" y="5" font-family="'Exo 2', sans-serif" font-size="12" font-weight="bold" text-anchor="middle"
+      fill="#007AFF">Classifier</text>
+  </g>
+
+  <!-- C: Billing Tool (Left) -->
+  <!-- Position: old y=300, new y=310. Moved down 10px. -->
+  <g transform="translate(100, 310)">
+    <rect width="160" height="60" rx="8" fill="#fee2e2" stroke="#FF3B30" stroke-width="2" filter="url(#shadow)" />
+    <text x="80" y="35" font-family="'Exo 2', sans-serif" font-size="14" font-weight="bold" text-anchor="middle"
+      fill="#b91c1c">💳 Billing Tool</text>
+  </g>
+
+  <!-- D: GitHub Tool (Center) -->
+  <!-- Position: old y=300, new y=310. -->
+  <g transform="translate(320, 310)">
+    <rect width="160" height="60" rx="8" fill="#fee2e2" stroke="#FF3B30" stroke-width="2" filter="url(#shadow)" />
+    <text x="80" y="35" font-family="'Exo 2', sans-serif" font-size="14" font-weight="bold" text-anchor="middle"
+      fill="#b91c1c">🐞 GitHub Issue</text>
+  </g>
+
+  <!-- E: RAG Search (Right) -->
+  <!-- Position: old y=300, new y=310. -->
+  <g transform="translate(540, 310)">
+    <rect width="160" height="60" rx="8" fill="#dcfce7" stroke="#34C759" stroke-width="2" filter="url(#shadow)" />
+    <text x="80" y="35" font-family="'Exo 2', sans-serif" font-size="14" font-weight="bold" text-anchor="middle"
+      fill="#15803d">📚 Docs Search</text>
+  </g>
+
+  <!-- F: Summarize (Convergence) -->
+  <!-- Position: y=420 (unchanged). But closer to C/D/E now (110px diff). -->
+  <g transform="translate(320, 420)">
+    <rect width="160" height="60" rx="8" fill="#e0f2fe" stroke="#007AFF" stroke-width="2" filter="url(#shadow)" />
+    <text x="80" y="35" font-family="'Exo 2', sans-serif" font-size="14" font-weight="bold" text-anchor="middle"
+      fill="#0369a1">📝 Summarize</text>
+  </g>
+
+  <!-- G: Final Response -->
+  <!-- Position: y=520 (unchanged) -->
+  <g transform="translate(325, 520)">
+    <rect width="150" height="50" rx="25" fill="#007AFF" filter="url(#shadow)" />
+    <text x="75" y="30" font-family="'Exo 2', sans-serif" font-size="14" font-weight="bold" text-anchor="middle"
+      fill="#fff">🚀 Final Response</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- A -> B -->
+  <!-- A bottom: 60+50=110. B top: 210-40=170. Dist: 60px. -->
+  <path d="M400,110 L400,170" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- B -> C (Billing) -->
+  <!-- B left: 350,210. C top center: 180,310. -->
+  <!-- Path: Left from B, down to C top. -->
+  <path d="M350,210 L180,210 L180,300" stroke="#FF3B30" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="230" y="205" font-family="'Exo 2', sans-serif" font-size="12" fill="#FF3B30">Billing Issue</text>
+
+  <!-- B -> D (tech bug) -->
+  <!-- B bottom: 400,250. D top center: 400,310. Dist: 60px. -->
+  <path d="M400,250 L400,300" stroke="#FF3B30" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="405" y="280" font-family="'Exo 2', sans-serif" font-size="12" fill="#FF3B30">Tech Bug</text>
+
+  <!-- B -> E (General) -->
+  <!-- B right: 450,210. E top center: 620,310. -->
+  <path d="M450,210 L620,210 L620,300" stroke="#34C759" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="510" y="205" font-family="'Exo 2', sans-serif" font-size="12" fill="#34C759">General Q</text>
+
+  <!-- C -> F -->
+  <!-- C bottom center: 180,370. F left center target: F is (320,420), center 400. left side 320. -->
+  <!-- Actually F is rect width 160. Center x=400.
+       Original logic: d="M180,360 L180,390 L320,450" -> 320,450 is F left side? No, F translate(320,420). 
+       Top mid of F is 400, 420. Left side is 320...
+       Let's look at previous: d="M180,360 L180,390 L320,450". It was pointing to somewhere.
+       Let's route to F top center (400, 420).
+       C bottom: 180, 370.
+       Target: 400, 420.
+       Let's stick to standard flow: Down then converge.
+       path d="M180,370 L180,395 L360,420" ?
+       Simpler: curve or straight.
+       Let's try to replicate the previous style but adjusted.
+       Previously: C(180,360) -> (180,390) -> (320,450). 320,450 is actually inside F (y=420..480). Ah, left side connection?
+       Let's connect to F top (400, 420).
+       C: 180, 370.
+       E: 620, 370.
+       D: 400, 370.
+       
+       C->F: M180,370 L180,395 L380,420 (slightly left of center to avoid overlap?) or just merge.
+       Let's merge all to F top (400, 420).
+   -->
+  <path d="M180,370 L180,395 L340,420" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- D -> F -->
+  <path d="M400,370 L400,410" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- E -> F -->
+  <path d="M620,370 L620,395 L460,420" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- F -> G -->
+  <!-- F bottom: 400, 480. G top: 400, 520. -->
+  <path d="M400,480 L400,520" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)" />
+
+</svg>
