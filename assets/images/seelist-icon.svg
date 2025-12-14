@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="eye-clip-blue">
+      <circle cx="50" cy="50" r="46" />
+    </clipPath>
+  </defs>
+
+  <g>
+    <!-- Floating Animation (Whole Icon) -->
+    <animateTransform attributeName="transform" type="translate" values="0 2; 0 -2; 0 2" dur="4s"
+      repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+
+    <g clip-path="url(#eye-clip-blue)">
+      <!-- Base: Blue Liquid -->
+      <rect width="100" height="100" fill="#007AFF" />
+
+      <!-- Liquid Texture on Base (Moving with Pupil) -->
+      <g>
+        <!-- Texture Movement (Synced Amplitude: 12px) -->
+        <animateTransform attributeName="transform" type="translate" values="0 0; 12 0; 0 12; -12 0; 0 -12; 0 0"
+          dur="5s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1" />
+
+        <path fill="#0066CC" opacity="0.5">
+          <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M 50 50 m -48 0 a 48 48 0 1 0 96 0 a 48 48 0 1 0 -96 0;
+                    M 50 50 m -46 2 a 46 44 0 1 0 92 -4 a 46 44 0 1 0 -92 4;
+                    M 50 50 m -48 0 a 48 48 0 1 0 96 0 a 48 48 0 1 0 -96 0" calcMode="spline"
+            keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+        </path>
+      </g>
+
+      <!-- Pupil/Iris/Highlights Group (Moving Together) -->
+      <g>
+        <!-- Pupil Movement (Large Amplitude: 12px) -->
+        <animateTransform attributeName="transform" type="translate" values="0 0; 12 0; 0 12; -12 0; 0 -12; 0 0"
+          dur="5s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1" />
+
+        <!-- Middle Layer: Green (Iris) -->
+        <circle cx="50" cy="50" r="28" fill="#34C759" />
+
+        <!-- Inner Layer: Red (Pupil) -->
+        <circle cx="50" cy="50" r="14" fill="#FF3B30" />
+
+        <!-- Highlights (Fixed relative to Pupil) -->
+        <!-- Large Highlight (Top-Right Boundary) -->
+        <circle cx="60" cy="40" r="5" fill="white" opacity="0.9" />
+
+        <!-- Small Highlight (Bottom-Left Boundary) -->
+        <circle cx="40" cy="60" r="3" fill="white" opacity="0.7" />
+      </g>
+    </g>
+  </g>
+</svg>

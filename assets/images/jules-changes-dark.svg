@@ -1,0 +1,173 @@
+<svg width="430" height="932" viewBox="0 0 430 932" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Device Frame (Square Corners) -->
+  <rect x="0" y="0" width="430" height="932" rx="0" fill="#121212" />
+
+  <!-- Header -->
+  <g transform="translate(20, 60)">
+    <path d="M0 12H24M0 12L12 0M0 12L12 24" transform="scale(0.8) translate(0, 5)" stroke="#E2E8F0" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" />
+    <text x="195" y="20" font-family="sans-serif" font-size="20" font-weight="500" fill="#E2E8F0"
+      text-anchor="middle">Changes</text>
+  </g>
+
+  <!-- List Container -->
+  <g transform="translate(0, 100)">
+
+    <!-- Item 1: build.yaml -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="430" height="60" fill="transparent" />
+      <!-- Gear Icon -->
+      <path d="M10 3V1M10 19V17M17 10H19M3 10H1M15 15L16.4 16.4M4.6 4.6L6 6M15 5L16.4 3.6M4.6 15.4L6 14"
+        transform="translate(15, 20)" stroke="#A855F7" stroke-width="2" stroke-linecap="round" />
+      <circle cx="25" cy="30" r="3" stroke="#A855F7" stroke-width="2" />
+
+      <text x="50" y="25" font-family="sans-serif" font-size="16" fill="#E2E8F0">build.yaml</text>
+      <text x="50" y="45" font-family="sans-serif" font-size="12" fill="#22C55E">Added +10</text>
+
+      <line x1="0" y1="60" x2="430" y2="60" stroke="#333333" stroke-width="1" />
+    </g>
+
+    <!-- Item 2: lib (Folder) -->
+    <g transform="translate(0, 60)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M20 15H35L37 17H45V35H20V15Z" fill="#3B82F6" /> <!-- Folder Icon -->
+      <text x="50" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">lib</text>
+      <!-- Chevron Up (Blue) (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
+
+    <!-- Item 3: core (Folder, Indented) -->
+    <g transform="translate(0, 110)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M30 15H45L47 17H55V35H30V15Z" fill="#3B82F6" /> <!-- Folder Icon -->
+      <text x="60" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">core</text>
+      <!-- Chevron Down (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <line x1="10" y1="0" x2="420" y2="0" stroke="#333333" stroke-width="1" />
+    </g>
+
+    <!-- Item 4: features (Folder, Indented) -->
+    <g transform="translate(0, 160)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M30 15H45L47 17H55V35H30V15Z" fill="#3B82F6" />
+      <text x="60" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">features</text>
+      <!-- Chevron Up (Shifted x+30) -->
+      <path d="M400 25L405 20L410 25" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <line x1="10" y1="0" x2="420" y2="0" stroke="#333333" stroke-width="1" />
+    </g>
+
+    <!-- Item 5: hero (Folder, Indented x2) -->
+    <g transform="translate(0, 210)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M40 15H55L57 17H65V35H40V15Z" fill="#3B82F6" />
+      <text x="70" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">hero</text>
+      <!-- Chevron Down (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
+
+    <!-- Item 6: match (Folder, Indented x2) -->
+    <g transform="translate(0, 260)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M40 15H55L57 17H65V35H40V15Z" fill="#3B82F6" />
+      <text x="70" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">match</text>
+      <!-- Chevron Down (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <line x1="0" y1="50" x2="430" y2="50" stroke="#333333" stroke-width="1" />
+    </g>
+
+    <!-- Item 7: main.dart -->
+    <g transform="translate(0, 310)">
+      <rect x="0" y="0" width="430" height="60" fill="transparent" />
+      <!-- Code Icon -->
+      <path d="M30 20L25 25L30 30M35 20L40 25L35 30" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+
+      <text x="60" y="25" font-family="sans-serif" font-size="16" fill="#E2E8F0">main.dart</text>
+      <text x="60" y="45" font-family="sans-serif" font-size="12" fill="#F59E0B">Modified</text>
+      <text x="115" y="45" font-family="sans-serif" font-size="12" fill="#22C55E">+29</text>
+      <text x="140" y="45" font-family="sans-serif" font-size="12" fill="#EF4444">-98</text>
+    </g>
+
+    <!-- Item 8: shared/models -->
+    <g transform="translate(0, 370)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M30 15H45L47 17H55V35H30V15Z" fill="#3B82F6" />
+      <text x="60" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">shared/models</text>
+      <!-- Chevron Down (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <line x1="0" y1="50" x2="430" y2="50" stroke="#333333" stroke-width="1" />
+    </g>
+
+    <!-- Item 9: macos/Flutter -->
+    <g transform="translate(0, 420)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M20 15H35L37 17H45V35H20V15Z" fill="#3B82F6" />
+      <text x="50" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">macos/Flutter</text>
+      <!-- Chevron Up (Shifted x+30) -->
+      <path d="M400 25L405 20L410 25" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
+
+    <!-- Item 10: GeneratedPluginRegistrant.swift -->
+    <g transform="translate(0, 470)">
+      <rect x="0" y="0" width="430" height="60" fill="transparent" />
+      <path d="M30 15V35H45V20L40 15H30Z" fill="#94A3B8" /> <!-- File Icon -->
+
+      <text x="60" y="25" font-family="sans-serif" font-size="16" fill="#E2E8F0">GeneratedPluginRegistrant.swift</text>
+      <text x="60" y="45" font-family="sans-serif" font-size="12" fill="#F59E0B">Modified</text>
+      <text x="115" y="45" font-family="sans-serif" font-size="12" fill="#22C55E">+4</text>
+      <line x1="0" y1="60" x2="430" y2="60" stroke="#333333" stroke-width="1" />
+    </g>
+
+    <!-- Item 11: pubspec.lock -->
+    <g transform="translate(0, 530)">
+      <rect x="0" y="0" width="430" height="60" fill="transparent" />
+      <path d="M20 15V35H35V20L30 15H20Z" fill="#94A3B8" />
+
+      <text x="50" y="25" font-family="sans-serif" font-size="16" fill="#E2E8F0">pubspec.lock</text>
+      <text x="50" y="45" font-family="sans-serif" font-size="12" fill="#F59E0B">Modified</text>
+      <text x="105" y="45" font-family="sans-serif" font-size="12" fill="#22C55E">+500</text>
+      <text x="140" y="45" font-family="sans-serif" font-size="12" fill="#EF4444">-52</text>
+    </g>
+
+    <!-- Item 12: pubspec.yaml -->
+    <g transform="translate(0, 590)">
+      <rect x="0" y="0" width="430" height="60" fill="transparent" />
+      <path d="M10 3V1M10 19V17M17 10H19M3 10H1M15 15L16.4 16.4M4.6 4.6L6 6M15 5L16.4 3.6M4.6 15.4L6 14"
+        transform="translate(15, 20)" stroke="#A855F7" stroke-width="2" stroke-linecap="round" />
+      <circle cx="25" cy="30" r="3" stroke="#A855F7" stroke-width="2" />
+
+      <text x="50" y="25" font-family="sans-serif" font-size="16" fill="#E2E8F0">pubspec.yaml</text>
+      <text x="50" y="45" font-family="sans-serif" font-size="12" fill="#F59E0B">Modified</text>
+      <text x="105" y="45" font-family="sans-serif" font-size="12" fill="#22C55E">+7</text>
+      <text x="125" y="45" font-family="sans-serif" font-size="12" fill="#EF4444">-90</text>
+    </g>
+
+    <!-- Item 13: test -->
+    <g transform="translate(0, 650)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M20 15H35L37 17H45V35H20V15Z" fill="#3B82F6" />
+      <text x="50" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">test</text>
+      <!-- Chevron Down (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
+
+    <!-- Item 14: tools -->
+    <g transform="translate(0, 700)">
+      <rect x="0" y="0" width="430" height="50" fill="transparent" />
+      <path d="M20 15H35L37 17H45V35H20V15Z" fill="#3B82F6" />
+      <text x="50" y="28" font-family="sans-serif" font-size="16" fill="#E2E8F0">tools</text>
+      <!-- Chevron Down (Shifted x+30) -->
+      <path d="M400 20L405 25L410 20" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
+
+  </g>
+</svg>

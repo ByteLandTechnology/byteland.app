@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15 5 70 88">
+  <defs>
+    <style>
+      .eye-pupil {
+        animation: look-around 4s infinite;
+      }
+
+      @keyframes look-around {
+
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(-4px);
+        }
+
+        75% {
+          transform: translateX(2px);
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Floating Animation Wrapper -->
+  <g>
+    <!-- Two slow rises + one fast dive -->
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0; 0 -3; 0 0; 0 4; 0 0"
+      keyTimes="0; 0.2; 0.4; 0.6; 0.8; 0.9; 1" calcMode="spline"
+      keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.2 0 0.8 1; 0.6 0 0.4 1" dur="4s"
+      repeatCount="indefinite" />
+
+    <!-- Left Section (Blue) - phase 0 -->
+    <path fill="#007AFF">
+      <animate attributeName="d" values="M 40 12 L 40 80 Q 30 90 20 80 L 20 40 A 30 30 0 0 1 40 12 Z;
+                M 40 12 L 40 85 Q 30 75 20 85 L 20 40 A 30 30 0 0 1 40 12 Z;
+                M 40 12 L 40 80 Q 30 90 20 80 L 20 40 A 30 30 0 0 1 40 12 Z" dur="1.2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Middle Section (Green) - phase offset via different starting position -->
+    <path fill="#34C759">
+      <animate attributeName="d" values="M 60 12 L 60 83 Q 50 82 40 83 L 40 12 A 30 30 0 0 1 60 12 Z;
+                M 60 12 L 60 80 Q 50 90 40 80 L 40 12 A 30 30 0 0 1 60 12 Z;
+                M 60 12 L 60 85 Q 50 75 40 85 L 40 12 A 30 30 0 0 1 60 12 Z;
+                M 60 12 L 60 83 Q 50 82 40 83 L 40 12 A 30 30 0 0 1 60 12 Z" dur="1.2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Right Section (Red) - phase offset via different starting position -->
+    <path fill="#FF3B30">
+      <animate attributeName="d" values="M 80 40 L 80 85 Q 70 75 60 85 L 60 12 A 30 30 0 0 1 80 40 Z;
+                M 80 40 L 80 80 Q 70 90 60 80 L 60 12 A 30 30 0 0 1 80 40 Z;
+                M 80 40 L 80 85 Q 70 75 60 85 L 60 12 A 30 30 0 0 1 80 40 Z" dur="1.2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Eyes -->
+    <g transform="translate(0, 5)">
+      <!-- Left Eye -->
+      <circle cx="35" cy="40" r="8" fill="white" />
+      <circle cx="37" cy="40" r="3" fill="#0F172A" class="eye-pupil" />
+
+      <!-- Right Eye -->
+      <circle cx="65" cy="40" r="8" fill="white" />
+      <circle cx="67" cy="40" r="3" fill="#0F172A" class="eye-pupil" />
+    </g>
+  </g>
+</svg>

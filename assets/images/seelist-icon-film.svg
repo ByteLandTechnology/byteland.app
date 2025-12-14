@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Horizontal Film Strip Shape -->
+    <clipPath id="film-clip-h">
+      <rect x="5" y="25" width="90" height="50" rx="2" />
+    </clipPath>
+    <mask id="sprocket-holes-h">
+      <rect x="0" y="0" width="100" height="100" fill="white" />
+      <!-- Top Sprockets -->
+      <rect x="10" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="20" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="30" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="40" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="50" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="60" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="70" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="80" y="28" width="4" height="6" rx="1" fill="black" />
+      <rect x="90" y="28" width="4" height="6" rx="1" fill="black" />
+
+      <!-- Bottom Sprockets -->
+      <rect x="10" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="20" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="30" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="40" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="50" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="60" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="70" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="80" y="66" width="4" height="6" rx="1" fill="black" />
+      <rect x="90" y="66" width="4" height="6" rx="1" fill="black" />
+    </mask>
+  </defs>
+
+  <g>
+    <!-- Floating Animation -->
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="4s"
+      repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+
+    <!-- Main Film Body -->
+    <g clip-path="url(#film-clip-h)" mask="url(#sprocket-holes-h)">
+      <!-- Base Layer: Green -->
+      <rect width="100" height="100" fill="#34C759" />
+
+      <!-- Middle Layer: Red (Liquid Morph) -->
+      <path fill="#FF3B30">
+        <animate attributeName="d" dur="6s" repeatCount="indefinite" values="M 0 100 V 45 Q 30 35 60 65 T 100 85 V 100 Z;
+                  M 0 100 V 55 Q 40 65 70 45 T 100 75 V 100 Z;
+                  M 0 100 V 45 Q 30 35 60 65 T 100 85 V 100 Z" calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+      </path>
+
+      <!-- Top Layer: Blue (Liquid Morph) -->
+      <path fill="#007AFF">
+        <animate attributeName="d" dur="7s" repeatCount="indefinite" values="M 0 0 V 55 Q 40 65 70 45 T 100 35 V 0 Z;
+                  M 0 0 V 45 Q 30 25 60 55 T 100 45 V 0 Z;
+                  M 0 0 V 55 Q 40 65 70 45 T 100 35 V 0 Z" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+      </path>
+
+      <!-- Gloss -->
+      <path d="M 5 25 L 95 25 L 5 75 Z" fill="white" opacity="0.15" />
+    </g>
+
+    <!-- Border -->
+    <rect x="5" y="25" width="90" height="50" rx="2" fill="none" stroke="black" stroke-opacity="0.1" stroke-width="1" />
+  </g>
+</svg>
