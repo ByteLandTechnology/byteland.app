@@ -6,8 +6,6 @@ author: "The ByteLand Team"
 slug: "hello-byteland"
 ---
 
-# Hello, ByteLand!
-
 Welcome to the official blog of ByteLand Technology Limited. We're incredibly excited to launch this space and begin a conversation with our community, sharing our ideas, our progress, and our vision for the future of everyday applications.
 
 ## Our Mission: Smart Apps for Everyday Life
