@@ -21,10 +21,10 @@ self.__BUILD_MANIFEST = {
     "static/chunks/34d6f5934a1e9b19.js"
   ],
   "/opensource": [
-    "static/chunks/cd1046fee1a660b2.js"
+    "static/chunks/d125c894addb69b4.js"
   ],
   "/opensource/[...slug]": [
-    "static/chunks/1530d733d1fd1c56.js"
+    "static/chunks/9d9c162e4cf1d82f.js"
   ],
   "/seelist": [
     "static/chunks/b0b0f871461eb54e.js"
