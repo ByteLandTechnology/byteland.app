@@ -1,0 +1,82 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .formula {
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: bold;
+      fill: #2196f3;
+    }
+
+    .target-before {
+      fill: none;
+      stroke: #d32f2f;
+      stroke-width: 2;
+      rx: 2;
+      stroke-dasharray: 5, 3;
+    }
+
+    .target-after {
+      fill: #e8f5e9;
+      stroke: #4caf50;
+      stroke-width: 2;
+      rx: 2;
+    }
+
+    .viewport-bg {
+      fill: #e3f2fd;
+    }
+
+    .viewport {
+      fill: none;
+      stroke: #2196f3;
+      stroke-width: 2;
+      stroke-dasharray: 6, 3;
+    }
+
+    .legend-label {
+      font-family: monospace;
+      font-size: 11px;
+      fill: #555;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="400" height="260" fill="#f8f9fa" rx="4" />
+
+  <g transform="translate(130, 60)">
+
+    <!-- BEFORE 1: Red Dashed Border (above viewport) -->
+    <rect x="20" y="-40" width="100" height="30" class="target-before" />
+
+    <!-- Viewport Background (Blue fill) -->
+    <rect x="0" y="0" width="140" height="100" class="viewport-bg" />
+
+    <!-- BEFORE 2: Red Dashed Border (inside viewport, centered) -->
+    <rect x="20" y="35" width="100" height="30" class="target-before" />
+
+    <!-- AFTER: Green Solid (inside viewport, at bottom) -->
+    <rect x="20" y="70" width="100" height="30" class="target-after" />
+
+    <!-- Viewport Frame (Blue dashed border) -->
+    <rect x="0" y="0" width="140" height="100" class="viewport" />
+
+    <!-- BEFORE 3: Red Dashed Border (below viewport) -->
+    <rect x="20" y="110" width="100" height="30" class="target-before" />
+
+    <!-- Formula (Blue, simple) -->
+    <text x="70" y="160" text-anchor="middle" class="formula">newOffset = itemBottom - viewportHeight</text>
+
+  </g>
+
+  <!-- Legend on right side (English) -->
+  <g transform="translate(300, 60)">
+    <rect x="0" y="0" width="12" height="10" fill="none" stroke="#d32f2f" stroke-width="1" stroke-dasharray="4,2" />
+    <text x="18" y="9" class="legend-label">Before</text>
+
+    <rect x="0" y="20" width="12" height="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="1" />
+    <text x="18" y="29" class="legend-label">After</text>
+
+    <rect x="0" y="40" width="12" height="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="1" stroke-dasharray="3,1" />
+    <text x="18" y="49" class="legend-label">Viewport</text>
+  </g>
+</svg>

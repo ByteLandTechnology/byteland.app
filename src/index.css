@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rgb-red: #FF3B30;
+  --color-rgb-green: #34C759;
+  --color-rgb-blue: #007AFF;
+  
+  --color-primary: var(--color-rgb-blue);
+  --color-secondary: var(--color-rgb-red);
+  --color-accent: var(--color-rgb-green);
+  
+  --font-brand: "Exo 2", sans-serif;
+
+  --animate-blob: blob 7s infinite;
+  
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(50px, -50px) scale(1.2); }
+    66% { transform: translate(-30px, 30px) scale(0.8); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+.text-gradient-tri {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-rgb-blue via-rgb-green to-rgb-red;
+}
+
+.bg-gradient-tri {
+  @apply bg-linear-to-r from-rgb-blue via-rgb-green to-rgb-red;
+}

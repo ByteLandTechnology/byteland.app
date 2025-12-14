@@ -1,0 +1,92 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Button Gradient (Metallic/Plastic look) -->
+    <linearGradient id="grad-button" x1="0" y1="-50" x2="0" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Inner Shadow for Button Recess -->
+    <filter id="inner-shadow">
+      <feOffset dx="0" dy="4" />
+      <feGaussianBlur stdDeviation="3" result="offset-blur" />
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+      <feFlood flood-color="black" flood-opacity="0.3" result="color" />
+      <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+      <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+    </filter>
+
+    <!-- Drop Shadow for the Button (to lift it off the colors) -->
+    <filter id="drop-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3" />
+    </filter>
+
+    <!-- Clip Path for the Ball -->
+    <clipPath id="ball-clip">
+      <circle cx="0" cy="0" r="230" />
+    </clipPath>
+  </defs>
+
+  <!-- Centered Container -->
+  <g transform="translate(256, 256)">
+
+    <!-- Bounce Animation Group -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,20; 0,-20; 0,20" dur="2s"
+        repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+
+      <!-- Rotating Group (Colors + Black Frame) -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" />
+
+        <!-- Clipped Group: Ensures nothing (like thick strokes) leaks outside the ball -->
+        <g clip-path="url(#ball-clip)">
+          <!-- The Tri-Color Ball Sectors - FLAT COLORS -->
+          <!-- Red Blade -->
+          <path d="M0 -230 A230 230 0 0 1 199.2 115 L0 0 Z" fill="#FF3B30" />
+
+          <!-- Green Blade -->
+          <path d="M199.2 115 A230 230 0 0 1 -199.2 115 L0 0 Z" fill="#34C759" />
+
+          <!-- Blue Blade -->
+          <path d="M-199.2 115 A230 230 0 0 1 0 -230 L0 0 Z" fill="#007AFF" />
+
+          <!-- Black Frame Extensions (Separators) -->
+          <!-- Drawn slightly longer to ensure they cover the edge, but clipped by parent -->
+          <g stroke="#1e293b" stroke-width="24" stroke-linecap="round">
+            <line x1="0" y1="0" x2="0" y2="-240" />
+            <line x1="0" y1="0" x2="208" y2="120" />
+            <line x1="0" y1="0" x2="-208" y2="120" />
+          </g>
+        </g>
+
+        <!-- Dark Ring (Base of the button) - Drawn on top of clip to cover center convergence -->
+        <circle cx="0" cy="0" r="85" fill="#1e293b" />
+      </g>
+
+      <!-- Static Center Group (Button & Highlights) -->
+      <g>
+        <!-- Outer Button Casing with slight gradient & Drop Shadow -->
+        <circle cx="0" cy="0" r="70" fill="url(#grad-button)" filter="url(#drop-shadow)" />
+
+        <!-- Inner Button (The Switch) with Inner Shadow -->
+        <g filter="url(#inner-shadow)">
+          <circle cx="0" cy="0" r="45" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+        </g>
+
+        <!-- Highlights (Fixed relative to light source) -->
+        <!-- Main Gloss (Top Left) - Further out -->
+        <ellipse cx="-100" cy="-120" rx="90" ry="50" transform="rotate(-30 -100 -120)" fill="white" opacity="0.25"
+          filter="blur(8px)" />
+
+        <!-- Sharper Specular Highlight -->
+        <ellipse cx="-110" cy="-130" rx="30" ry="15" transform="rotate(-30 -110 -130)" fill="white" opacity="0.6"
+          filter="blur(2px)" />
+
+        <!-- Bottom Rim Light (Reflected light) - Subtle -->
+        <path d="M-80 190 Q 0 220 80 190" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.2"
+          filter="blur(4px)" />
+      </g>
+    </g>
+  </g>
+</svg>

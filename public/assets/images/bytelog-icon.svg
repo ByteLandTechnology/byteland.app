@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Page shadow -->
+    <filter id="pageShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+
+    <!-- Highlight gradient for left page -->
+    <linearGradient id="leftHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.3" />
+      <stop offset="30%" stop-color="#fff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Highlight gradient for right page -->
+    <linearGradient id="rightHighlight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.3" />
+      <stop offset="30%" stop-color="#fff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Highlight for flipping page -->
+    <linearGradient id="flipHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#fff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left page (blue) -->
+  <g filter="url(#pageShadow)">
+    <path d="M8 12 L8 52 Q18 50 30 52 L30 12 Q18 10 8 12 Z" fill="#007AFF" />
+    <path d="M8 12 L8 52 Q18 50 30 52 L30 12 Q18 10 8 12 Z" fill="url(#leftHighlight)" />
+  </g>
+
+  <!-- Right page (red) -->
+  <g filter="url(#pageShadow)">
+    <path d="M34 12 L34 52 Q46 50 56 52 L56 12 Q46 10 34 12 Z" fill="#FF3B30" />
+    <path d="M34 12 L34 52 Q46 50 56 52 L56 12 Q46 10 34 12 Z" fill="url(#rightHighlight)" />
+  </g>
+
+  <!-- Page lines on left (blue page) -->
+  <g stroke="#fff" stroke-width="0.5" opacity="0.4">
+    <line x1="12" y1="20" x2="26" y2="19" />
+    <line x1="12" y1="26" x2="26" y2="25" />
+    <line x1="12" y1="32" x2="26" y2="31" />
+    <line x1="12" y1="38" x2="26" y2="37" />
+    <line x1="12" y1="44" x2="26" y2="43" />
+  </g>
+
+  <!-- Page lines on right (red page) -->
+  <g stroke="#fff" stroke-width="0.5" opacity="0.4">
+    <line x1="38" y1="19" x2="52" y2="20" />
+    <line x1="38" y1="25" x2="52" y2="26" />
+    <line x1="38" y1="31" x2="52" y2="32" />
+    <line x1="38" y1="37" x2="52" y2="38" />
+    <line x1="38" y1="43" x2="52" y2="44" />
+  </g>
+
+  <!-- Animated flipping page (green) - no lines to avoid clipping issues -->
+  <g filter="url(#pageShadow)">
+    <!-- Green page base -->
+    <path fill="#34C759">
+      <animate attributeName="d" values="M34 12 Q46 10 56 12 L56 52 Q46 50 34 52 Z;
+                M32 12 Q32 10 32 12 L32 52 Q32 50 32 52 Z;
+                M30 12 Q18 10 8 12 L8 52 Q18 50 30 52 Z;
+                M30 12 Q18 10 8 12 L8 52 Q18 50 30 52 Z;
+                M32 12 Q32 10 32 12 L32 52 Q32 50 32 52 Z;
+                M34 12 Q46 10 56 12 L56 52 Q46 50 34 52 Z" dur="3s" repeatCount="indefinite" calcMode="spline"
+        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+        keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1" />
+    </path>
+
+    <!-- Highlight overlay on green page -->
+    <path fill="url(#flipHighlight)">
+      <animate attributeName="d" values="M34 12 Q46 10 56 12 L56 52 Q46 50 34 52 Z;
+                M32 12 Q32 10 32 12 L32 52 Q32 50 32 52 Z;
+                M30 12 Q18 10 8 12 L8 52 Q18 50 30 52 Z;
+                M30 12 Q18 10 8 12 L8 52 Q18 50 30 52 Z;
+                M32 12 Q32 10 32 12 L32 52 Q32 50 32 52 Z;
+                M34 12 Q46 10 56 12 L56 52 Q46 50 34 52 Z" dur="3s" repeatCount="indefinite" calcMode="spline"
+        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+        keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1" />
+    </path>
+  </g>
+</svg>

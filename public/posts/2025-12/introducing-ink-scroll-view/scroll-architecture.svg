@@ -1,0 +1,109 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa" rx="5" />
+  
+  <!-- Legend -->
+  <g transform="translate(460, 20)">
+    <rect x="0" y="0" width="15" height="15" fill="#e3f2fd" stroke="#2196f3" stroke-dasharray="4" />
+    <text x="25" y="12" font-family="monospace" font-size="12">Viewport</text>
+    <rect x="0" y="25" width="15" height="15" fill="#fff" stroke="#333" />
+    <text x="25" y="37" font-family="monospace" font-size="12">Items</text>
+  </g>
+
+  <!-- Diagram Container -->
+  <!-- Shifted down to avoid top cropping (y=110) -->
+  <g transform="translate(180, 110)">
+
+    <!-- 1. Viewport Background (The "Window") -->
+    <rect x="0" y="0" width="240" height="200" fill="#e3f2fd" stroke="none" rx="4" />
+
+    <!-- 2. Content Layer (Items) -->
+    <!-- All items translated by (20, 20) relative to viewport origin minus scroll offset 
+         Here we simulate the positioning manually -->
+    
+    <g transform="translate(20, 0)">
+        <!-- Item 1: y=-60, h=40 (Totally hidden) -->
+        <g opacity="0.4">
+            <rect x="0" y="-60" width="200" height="40" fill="#ddd" stroke="#999" />
+            <text x="100" y="-35" text-anchor="middle" font-family="monospace" font-size="12">Item 1 (Hidden)</text>
+        </g>
+
+        <!-- Item 2: y=-15, h=30 (Partially visible) -->
+        <!-- Drawn fully, will be masked later -->
+        <rect x="0" y="-15" width="200" height="30" fill="#fff" stroke="#333" rx="2" />
+        <text x="100" y="5" text-anchor="middle" font-family="monospace" font-size="12">Item 2 (Partial)</text>
+
+        <!-- Visible Group: y=20 relative to container -->
+        <g transform="translate(0, 20)">
+             <!-- Item 3: y=0 (Abs 20) -->
+            <rect x="0" y="0" width="200" height="50" fill="#fff" stroke="#333" rx="2" />
+            <text x="100" y="30" text-anchor="middle" font-family="monospace" font-size="14">Item 3 (Visible)</text>
+      
+            <!-- Item 4: y=60 (Abs 80) -->
+            <rect x="0" y="60" width="200" height="80" fill="#fff" stroke="#333" rx="2" />
+            <text x="100" y="95" text-anchor="middle" font-family="monospace" font-size="14">Item 4</text>
+            <text x="100" y="115" text-anchor="middle" font-family="monospace" font-size="12" fill="#666">(Variable Height)</text>
+        </g>
+
+        <!-- Item 5: y=170 (Partially visible) -->
+        <rect x="0" y="170" width="200" height="40" fill="#fff" stroke="#333" rx="2" />
+        <text x="100" y="195" text-anchor="middle" font-family="monospace" font-size="12">Item 5 (Partial)</text>
+
+        <!-- Item 6: y=215 (Hidden) -->
+        <g opacity="0.4">
+            <rect x="0" y="215" width="200" height="30" fill="#ddd" stroke="#999" />
+            <text x="100" y="235" text-anchor="middle" font-family="monospace" font-size="12">Item 6 (Hidden)</text>
+        </g>
+    </g>
+
+    <!-- 3. Masking Layer ("Fog of War" outside viewport) -->
+    <!-- Top Mask -->
+    <rect x="0" y="-150" width="240" height="150" fill="#f8f9fa" opacity="0.85" />
+    <line x1="0" y1="0" x2="240" y2="0" stroke="#2196f3" stroke-width="1" stroke-dasharray="4" />
+
+    <!-- Bottom Mask -->
+    <rect x="0" y="200" width="240" height="150" fill="#f8f9fa" opacity="0.85" />
+    <line x1="0" y1="200" x2="240" y2="200" stroke="#2196f3" stroke-width="1" stroke-dasharray="4" />
+
+    <!-- 4. Viewport Border -->
+    <rect x="0" y="0" width="240" height="200" fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,5" rx="4" />
+
+    <!-- 5. Dimensions & Logic -->
+    
+    <!-- LEFT SIDE: scrollOffset -->
+    <g transform="translate(0, 0)">
+        <!-- Reference Lines -->
+        <line x1="20" y1="-60" x2="-40" y2="-60" stroke="#999" stroke-dasharray="2,2" /> <!-- Top of content -->
+        <line x1="0" y1="0" x2="-40" y2="0" stroke="#999" stroke-dasharray="2,2" />   <!-- Top of viewport -->
+
+        <!-- Dimension Line -->
+        <line x1="-30" y1="-60" x2="-30" y2="0" stroke="#d32f2f" stroke-width="2" />
+        <!-- End Caps -->
+        <line x1="-35" y1="-60" x2="-25" y2="-60" stroke="#d32f2f" stroke-width="2" />
+        <line x1="-35" y1="0" x2="-25" y2="0" stroke="#d32f2f" stroke-width="2" />
+        
+        <!-- Labels -->
+        <text x="-45" y="-25" text-anchor="end" font-family="monospace" font-size="14" fill="#d32f2f" font-weight="bold">scrollOffset</text>
+        
+        <text x="20" y="-70" font-family="monospace" font-size="12" fill="#2e7d32" font-weight="bold">marginTop = -scrollOffset</text>
+    </g>
+
+
+    <!-- RIGHT SIDE: contentHeight -->
+    <g transform="translate(0, 0)">
+        <!-- Reference Lines -->
+        <line x1="220" y1="-60" x2="280" y2="-60" stroke="#999" stroke-dasharray="2,2" /> <!-- Top of content -->
+        <line x1="220" y1="245" x2="280" y2="245" stroke="#999" stroke-dasharray="2,2" /> <!-- Bottom of content (Item 6) -->
+
+        <!-- Dimension Line -->
+        <line x1="270" y1="-60" x2="270" y2="245" stroke="#666" stroke-width="2" />
+        <!-- End Caps -->
+        <line x1="265" y1="-60" x2="275" y2="-60" stroke="#666" stroke-width="2" />
+        <line x1="265" y1="245" x2="275" y2="245" stroke="#666" stroke-width="2" />
+
+        <!-- Label -->
+        <text x="280" y="75" font-family="monospace" font-size="14" fill="#666" font-weight="bold" transform="rotate(90, 280, 75)">contentHeight</text>
+    </g>
+
+  </g>
+</svg>
