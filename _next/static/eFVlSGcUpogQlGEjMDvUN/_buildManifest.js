@@ -1,36 +1,36 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/2b9523d2a0f8af78.js"
+    "static/chunks/0316dd3fb96c1ae3.js"
   ],
   "/_error": [
     "static/chunks/ec31221973583340.js"
   ],
   "/about": [
-    "static/chunks/00fd5539e2a2d571.js"
+    "static/chunks/3a72a444bc53d970.js"
   ],
   "/blog": [
-    "static/chunks/30f37af4e6d267ea.js"
+    "static/chunks/2bd37c840ae9ad8e.js"
   ],
   "/blog/[...slug]": [
-    "static/chunks/7feb06832fdac0be.js"
+    "static/chunks/2fc10fc0d5d765b2.js"
   ],
   "/joydex": [
-    "static/chunks/166cdd286328b9f8.js"
+    "static/chunks/0969c196b40a7c6e.js"
   ],
   "/jules-go": [
-    "static/chunks/b22d1a619f708ecd.js"
+    "static/chunks/6c952c9df519a79c.js"
   ],
   "/opensource": [
-    "static/chunks/ff9f7cd3443464e5.js"
+    "static/chunks/e6078e3b788ff7e7.js"
   ],
   "/opensource/[...slug]": [
-    "static/chunks/30227c785c48f748.js"
+    "static/chunks/02de9f7edbc3afc6.js"
   ],
   "/seelist": [
-    "static/chunks/0876186e95ef61f7.js"
+    "static/chunks/5b2c58c866caeea0.js"
   ],
   "/seelist/privacy": [
-    "static/chunks/b715e3f4a80b49ef.js"
+    "static/chunks/fa9d128ae0537da8.js"
   ],
   "__rewrites": {
     "afterFiles": [],

@@ -8,8 +8,8 @@ __turbopack_load_page_chunks__("/opensource/[...slug]", [
   "static/chunks/6c50fd5a9cb62cf9.js",
   "static/chunks/25a18d3d79530fe7.js",
   "static/chunks/32eb26355c0cb5a7.js",
-  "static/chunks/1f5a0fa46952093b.js",
+  "static/chunks/fd1fef2e073e61c6.js",
   "static/chunks/ef231bdfb627b856.js",
   "static/chunks/e8cde9e255ff5e90.js",
-  "static/chunks/turbopack-0485b9083aaa6489.js"
+  "static/chunks/turbopack-d1187cbb4251d845.js"
 ])
