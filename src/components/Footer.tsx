@@ -273,7 +273,20 @@ export default function Footer({ config, children }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {renderContent()}
         <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-          &copy; {year} ByteLand Technology Limited. All rights reserved.
+          <p className="mb-2">
+            &copy; {year} ByteLand Technology Limited. All rights reserved.
+          </p>
+          <p>
+            This website is open source.{" "}
+            <a
+              href="https://github.com/ByteLandTechnology/byteland.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-300 underline underline-offset-2 transition-colors"
+            >
+              View Source Code
+            </a>
+          </p>
         </div>
       </div>
     </footer>
