@@ -18,7 +18,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/0969c196b40a7c6e.js"
   ],
   "/jules-go": [
-    "static/chunks/6c952c9df519a79c.js"
+    "static/chunks/aac86424c0c810e4.js"
   ],
   "/opensource": [
     "static/chunks/e6078e3b788ff7e7.js"
