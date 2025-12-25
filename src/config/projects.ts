@@ -55,4 +55,24 @@ export const projects: Project[] = [
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/ink-multiline-input/main/README.md",
   },
+  {
+    id: "ink-canvas",
+    name: "ink-canvas",
+    description: "A library for rendering Ink applications in the browser.",
+    link: "https://github.com/ByteLandTechnology/ink-canvas",
+    icon: FaBoxOpen,
+    language: "TypeScript",
+    readmeUrl:
+      "https://raw.githubusercontent.com/ByteLandTechnology/ink-canvas/main/README.md",
+  },
+  {
+    id: "jules-api-node",
+    name: "jules-api-node",
+    description: "The unofficial TypeScript client for the Jules API.",
+    link: "https://github.com/ByteLandTechnology/jules-api-node",
+    icon: FaBoxOpen,
+    language: "TypeScript",
+    readmeUrl:
+      "https://raw.githubusercontent.com/ByteLandTechnology/jules-api-node/main/README.md",
+  },
 ];
