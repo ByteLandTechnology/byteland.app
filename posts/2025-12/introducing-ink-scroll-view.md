@@ -1,7 +1,7 @@
 ---
 title: "Introducing ink-scroll-view"
 date: "2025-12-06"
-tags: ["ink", "cli", "react", "typescript"]
+tags: ["Ink", "CLI", "React", "Typescript"]
 author: "The ByteLand Engineering Team"
 slug: "introducing-ink-scroll-view"
 ---

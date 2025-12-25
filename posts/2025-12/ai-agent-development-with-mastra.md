@@ -1,7 +1,7 @@
 ---
 title: "AI Agent Development with Mastra"
 date: "2025-12-14"
-tags: ["ai", "typescript"]
+tags: ["AI", "Typescript"]
 author: "The ByteLand Team"
 slug: "ai-agent-development-with-mastra"
 ---

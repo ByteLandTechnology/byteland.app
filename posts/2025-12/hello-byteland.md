@@ -1,7 +1,7 @@
 ---
-title: "Hello, ByteLand! Our Vision for the Future of Apps"
+title: "Hello, ByteLand!"
 date: "2025-12-05"
-tags: ["company", "announcement"]
+tags: ["Announcement"]
 author: "The ByteLand Team"
 slug: "hello-byteland"
 ---
