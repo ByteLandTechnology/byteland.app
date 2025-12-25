@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://byteland.app</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/about</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/blog</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/joydex</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/jules-go</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/opensource</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/seelist</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/seelist/privacy</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/about</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/blog</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/joydex</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/jules-go</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/opensource</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/seelist</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/seelist/privacy</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://byteland.app/opensource/ink-scroll-view</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://byteland.app/opensource/ink-scroll-list</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://byteland.app/opensource/ink-scroll-bar</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://byteland.app/opensource/ink-multiline-input</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://byteland.app/opensource/ink-canvas</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://byteland.app/opensource/jules-api-node</loc><lastmod>2025-12-25T12:55:50.994Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://byteland.app/blog/2025-12/ai-agent-development-with-mastra</loc><lastmod>2025-12-14T00:00:00.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://byteland.app/blog/2025-12/hello-byteland</loc><lastmod>2025-12-05T00:00:00.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://byteland.app/blog/2025-12/introducing-ink-scroll-view</loc><lastmod>2025-12-06T00:00:00.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://byteland.app/blog/2025-12/unlocking-visual-editing-react-puck</loc><lastmod>2025-12-18T00:00:00.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://byteland.app/opensource/ink-scroll-view</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://byteland.app/opensource/ink-scroll-list</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://byteland.app/opensource/ink-scroll-bar</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://byteland.app/opensource/ink-multiline-input</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://byteland.app/opensource/ink-canvas</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://byteland.app/opensource/jules-api-node</loc><lastmod>2025-12-25T12:38:55.622Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
