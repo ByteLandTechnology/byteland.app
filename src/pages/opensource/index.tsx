@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaCode, FaChevronRight } from "react-icons/fa6";
+import { FaCode, FaChevronRight, FaGlobe } from "react-icons/fa6";
 import Link from "next/link";
 import Page from "../../components/Page";
 import { FooterConfig } from "../../components/Footer";
@@ -65,11 +65,22 @@ export default function OpenLand() {
                   aria-label={`View ${project.name} details`}
                 ></Link>
 
-                <div className="flex items-start justify-between mb-6 relative z-20 pointer-events-none">
+                <div className="flex items-center gap-3 relative z-20">
                   <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-rgb-blue/10 group-hover:text-rgb-blue transition-colors">
                     <project.icon className="w-6 h-6" />
                   </div>
-                  {/* External link as a separate clickable area if needed, but keeping whole card clickable is better UX for "Details" */}
+                  {project.homepage && (
+                    <a
+                      href={project.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-rgb-blue hover:text-white transition-all pointer-events-auto"
+                      onClick={(e) => e.stopPropagation()}
+                      aria-label={`${project.name} homepage`}
+                    >
+                      <FaGlobe className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
 
                 <div className="flex items-center justify-between mb-2">

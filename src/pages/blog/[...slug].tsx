@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { FaCalendarDays, FaUser, FaArrowLeft } from "react-icons/fa6";
 import Page from "../../components/Page";
 import { FooterConfig } from "../../components/Footer";
-import MarkdownRenderer from "../../components/MarkdownRenderer";
+import { createMarkdownComponents } from "../../components/MarkdownRenderer";
+import { MDXRemote } from "next-mdx-remote";
 import { getAllPostSlugs, getPostData, Post } from "../../lib/blog";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
@@ -69,10 +70,14 @@ export default function BlogPost({ post }: { post: Post }) {
         </header>
 
         {/* Post Content */}
-        <MarkdownRenderer
-          content={post.content}
-          basePath={`/posts/${post.slug.split("/")[0]}`}
-        />
+        <div className="prose prose-lg prose-slate max-w-none">
+          <MDXRemote
+            {...post.mdxSource}
+            components={createMarkdownComponents(
+              `/posts/${post.slug.split("/")[0]}`,
+            )}
+          />
+        </div>
       </motion.article>
     );
   };

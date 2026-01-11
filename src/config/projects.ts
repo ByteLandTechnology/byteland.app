@@ -8,6 +8,7 @@ export interface Project {
   icon: any;
   language: string;
   readmeUrl: string;
+  homepage?: string;
 }
 
 export const projects: Project[] = [
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     language: "TypeScript",
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/ink-scroll-view/main/README.md",
+    homepage: "https://github.com/ByteLandTechnology/ink-scroll-view",
   },
   {
     id: "ink-scroll-list",
@@ -32,6 +34,7 @@ export const projects: Project[] = [
     language: "TypeScript",
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/ink-scroll-list/main/README.md",
+    homepage: "https://github.com/ByteLandTechnology/ink-scroll-list",
   },
   {
     id: "ink-scroll-bar",
@@ -43,6 +46,7 @@ export const projects: Project[] = [
     language: "TypeScript",
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/ink-scroll-bar/main/README.md",
+    homepage: "https://github.com/ByteLandTechnology/ink-scroll-bar",
   },
   {
     id: "ink-multiline-input",
@@ -54,6 +58,7 @@ export const projects: Project[] = [
     language: "TypeScript",
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/ink-multiline-input/main/README.md",
+    homepage: "https://github.com/ByteLandTechnology/ink-multiline-input",
   },
   {
     id: "ink-canvas",
@@ -64,6 +69,7 @@ export const projects: Project[] = [
     language: "TypeScript",
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/ink-canvas/main/README.md",
+    homepage: "https://github.com/ByteLandTechnology/ink-canvas",
   },
   {
     id: "jules-api-node",
@@ -74,5 +80,6 @@ export const projects: Project[] = [
     language: "TypeScript",
     readmeUrl:
       "https://raw.githubusercontent.com/ByteLandTechnology/jules-api-node/main/README.md",
+    homepage: "https://github.com/ByteLandTechnology/jules-api-node",
   },
 ];

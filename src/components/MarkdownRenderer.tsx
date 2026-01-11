@@ -50,11 +50,11 @@ function resolveImagePath(
 }
 
 // Create components factory that accepts paths
-function createMarkdownComponents(
+export function createMarkdownComponents(
   basePath?: string,
   linkBasePath?: string,
   routeBase?: string,
-): object {
+): any {
   return {
     h1: ({ ...props }) => (
       <h1
