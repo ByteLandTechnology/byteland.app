@@ -7,10 +7,12 @@
     "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "eslint",
+    "test:e2e": "playwright test --grep-invert @perf",
+    "test:e2e:baseline": "playwright test --grep @baseline --project=chromium",
+    "test:e2e:perf": "playwright test --grep @perf --project=chromium --workers=1",
     "prepare": "husky"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.27.16",
     "@microsoft/clarity": "^1.0.2",
     "framer-motion": "^12.23.26",
     "gray-matter": "^4.0.3",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
+    "@playwright/test": "^1.64.0",
     "@tailwindcss/oxide": "^4.1.18",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

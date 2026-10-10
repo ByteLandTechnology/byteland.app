@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
-import { FaCalendarDays, FaUser, FaArrowLeft } from "react-icons/fa6";
+import Reveal from "../../components/Reveal";
+import Head from "next/head";
+import { FaArrowLeft } from "react-icons/fa6";
 import Page from "../../components/Page";
-import { FooterConfig } from "../../components/Footer";
+import { formatDate, PostCover } from "../../components/PostCard";
+import { vt } from "../../lib/viewTransition";
 import { createMarkdownComponents } from "../../components/MarkdownRenderer";
 import { MDXRemote } from "next-mdx-remote";
 import { getAllPostSlugs, getPostData, Post } from "../../lib/blog";
@@ -19,8 +21,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // params.slug is now an array like ['2025-12', 'hello-byteland']
   const slugArray = params?.slug as string[];
+  if (
+    !Array.isArray(slugArray) ||
+    slugArray.length === 0 ||
+    !slugArray.every((segment) => typeof segment === "string")
+  ) {
+    return { notFound: true };
+  }
   const slugString = slugArray.join("/");
   const postData = await getPostData(slugString);
+  if (!postData) {
+    return { notFound: true };
+  }
   return {
     props: {
       post: postData,
@@ -29,82 +41,61 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function BlogPost({ post }: { post: Post }) {
-  const renderContent = () => {
-    return (
-      <motion.article
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        {/* Post Header */}
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-            {post.title}
-          </h1>
-          <div className="flex justify-center items-center gap-6 text-md text-slate-500">
-            <div className="flex items-center gap-2">
-              <FaCalendarDays className="w-5 h-5" />
-              <span>
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaUser className="w-5 h-5" />
-              <span>{post.author}</span>
-            </div>
-          </div>
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-sm font-semibold text-slate-600 bg-slate-100 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </header>
-
-        {/* Post Content */}
-        <div className="prose prose-lg prose-slate max-w-none">
-          <MDXRemote
-            {...post.mdxSource}
-            components={createMarkdownComponents(
-              `/posts/${post.slug.split("/")[0]}`,
-            )}
-          />
-        </div>
-      </motion.article>
-    );
-  };
-
-  const footerConfig: FooterConfig = {
-    variant: "grid",
-    brand: {
-      title: "ByteLog",
-      description: "Insights and updates from the ByteLand team.",
-      icon: "/assets/images/bytelog-icon.svg",
-    },
-    socials: true,
-  };
-
   return (
-    <Page footerConfig={footerConfig} className="bg-white">
-      <div className="pt-8 pb-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-slate-600 hover:text-rgb-blue mb-8"
+    <Page>
+      <Head>
+        <title>{`${post.title} - ByteLand Technology`}</title>
+        {post.description && (
+          <meta
+            key="description"
+            name="description"
+            content={post.description}
+          />
+        )}
+      </Head>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-rgb-blue mb-10 transition-colors"
+        >
+          <FaArrowLeft className="w-3 h-3" />
+          All posts
+        </Link>
+        {/* The cover and title morph from the post card (shared elements). */}
+        <article>
+          <div
+            className="mb-8 overflow-hidden rounded-3xl shadow-xl shadow-blue-900/10"
+            style={vt("cover", post.slug)}
           >
-            <FaArrowLeft className="mr-2 w-4 h-4" />
-            Back to Blog
-          </Link>
-          {renderContent()}
-        </div>
+            <PostCover post={post} />
+          </div>
+          <header className="mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+            <time className="font-mono text-sm text-slate-500">
+              {formatDate(post.date)}
+            </time>
+            <h1
+              className="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight"
+              style={vt("post", post.slug, { text: true })}
+            >
+              {post.title}
+            </h1>
+            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
+              <span>{post.author}</span>
+              {post.tags.map((tag) => (
+                <span key={tag}>#{tag}</span>
+              ))}
+            </div>
+          </header>
+
+          <Reveal className="max-w-none">
+            <MDXRemote
+              {...post.mdxSource}
+              components={createMarkdownComponents(
+                `/posts/${post.slug.split("/")[0]}`,
+              )}
+            />
+          </Reveal>
+        </article>
       </div>
     </Page>
   );

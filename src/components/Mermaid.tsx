@@ -1,13 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import mermaid from "mermaid";
-import { nanoid } from "nanoid";
-
-mermaid.initialize({
-  startOnLoad: false,
-  theme: "default",
-  securityLevel: "loose",
-  fontFamily: "inherit",
-});
+import { useEffect, useRef, useState, useId } from "react";
 
 interface MermaidProps {
   chart: string;
@@ -16,32 +7,54 @@ interface MermaidProps {
 export default function Mermaid({ chart }: MermaidProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [svg, setSvg] = useState<string>("");
-  const id = useRef(`mermaid-${nanoid()}`);
+  const [error, setError] = useState<string | null>(null);
+  const reactId = useId().replace(/:/g, "-");
 
   useEffect(() => {
+    let cancelled = false;
+    setSvg("");
+    setError(null);
+
     const renderChart = async () => {
       if (!containerRef.current) return;
 
       try {
-        const { svg } = await mermaid.render(id.current, chart);
-        setSvg(svg);
+        const mermaid = (await import("mermaid")).default;
+        if (cancelled) return;
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: "default",
+          securityLevel: "strict",
+          fontFamily: "inherit",
+        });
+        const { svg } = await mermaid.render(`mermaid-${reactId}`, chart);
+        if (!cancelled) setSvg(svg);
       } catch (error) {
-        console.error("Mermaid rendering failed:", error);
-        // Keep the raw chart as fallback or show error
-        setSvg(
-          `<pre class="text-red-500 bg-red-50 p-4 rounded">${error instanceof Error ? error.message : "Syntax error in graph"}</pre>`,
-        );
+        if (!cancelled) {
+          console.error("Mermaid rendering failed:", error);
+          setError(
+            error instanceof Error ? error.message : "Syntax error in graph",
+          );
+        }
       }
     };
 
     renderChart();
-  }, [chart]);
+    return () => {
+      cancelled = true;
+    };
+  }, [chart, reactId]);
 
   return (
     <div
       ref={containerRef}
-      className="mermaid-chart flex justify-center my-8 bg-slate-50 p-4 rounded-xl overflow-x-auto"
-      dangerouslySetInnerHTML={{ __html: svg }}
-    />
+      className="mermaid-chart flex justify-center my-8 bg-slate-50 dark:bg-white p-4 rounded-xl overflow-x-auto"
+    >
+      {error ? (
+        <pre className="text-red-500 bg-red-50 p-4 rounded">{error}</pre>
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: svg }} />
+      )}
+    </div>
   );
 }

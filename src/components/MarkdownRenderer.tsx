@@ -1,5 +1,9 @@
+import { useMemo } from "react";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, {
+  type Components,
+  type ExtraProps,
+} from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -54,34 +58,37 @@ export function createMarkdownComponents(
   basePath?: string,
   linkBasePath?: string,
   routeBase?: string,
-): any {
+): Components {
   return {
     h1: ({ ...props }) => (
       <h1
-        className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-12 mb-6 scroll-mt-20"
+        className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-12 mb-6 scroll-mt-20 first:mt-0"
         {...props}
       />
     ),
     h2: ({ ...props }) => (
       <h2
-        className="text-2xl sm:text-3xl font-bold text-rgb-blue mt-10 mb-4 border-b border-blue-200/50 pb-3 scroll-mt-20"
+        className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-12 mb-4 border-b border-slate-200 dark:border-slate-800 pb-3 scroll-mt-20"
         {...props}
       />
     ),
     h3: ({ ...props }) => (
       <h3
-        className="text-xl sm:text-2xl font-bold text-rgb-green mt-8 mb-4 scroll-mt-20"
+        className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 scroll-mt-20"
         {...props}
       />
     ),
     h4: ({ ...props }) => (
       <h4
-        className="text-lg sm:text-xl font-bold text-rgb-red mt-8 mb-4 scroll-mt-20"
+        className="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 mt-8 mb-4 scroll-mt-20"
         {...props}
       />
     ),
     p: ({ ...props }) => (
-      <p className="text-lg text-slate-700 leading-relaxed my-6" {...props} />
+      <p
+        className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed my-5"
+        {...props}
+      />
     ),
     a: ({ href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
       let finalHref = href;
@@ -106,8 +113,8 @@ export function createMarkdownComponents(
           return (
             <Link
               href={href}
-              className="text-rgb-blue font-semibold hover:underline hover:text-rgb-red transition-colors"
-              {...(props as any)}
+              className="text-rgb-blue font-medium underline decoration-rgb-blue/30 underline-offset-2 hover:decoration-rgb-blue transition-colors"
+              {...props}
             >
               {props.children}
             </Link>
@@ -124,7 +131,7 @@ export function createMarkdownComponents(
 
       return (
         <a
-          className="text-rgb-blue font-semibold hover:underline hover:text-rgb-red transition-colors"
+          className="text-rgb-blue font-medium underline decoration-rgb-blue/30 underline-offset-2 hover:decoration-rgb-blue transition-colors"
           href={finalHref}
           target={target}
           rel={target === "_blank" ? "noopener noreferrer" : undefined}
@@ -134,17 +141,22 @@ export function createMarkdownComponents(
     },
     ul: ({ ...props }) => (
       <ul
-        className="list-disc pl-6 my-6 space-y-3 marker:text-slate-400"
+        className="list-disc pl-6 my-6 space-y-3 marker:text-slate-400 dark:marker:text-slate-600"
         {...props}
       />
     ),
     ol: ({ ...props }) => (
       <ol
-        className="list-decimal pl-6 my-6 space-y-3 marker:text-slate-400"
+        className="list-decimal pl-6 my-6 space-y-3 marker:text-slate-400 dark:marker:text-slate-600"
         {...props}
       />
     ),
-    li: ({ ...props }) => <li className="text-lg text-slate-700" {...props} />,
+    li: ({ ...props }) => (
+      <li
+        className="text-base sm:text-lg text-slate-700 dark:text-slate-300"
+        {...props}
+      />
+    ),
     code: ({
       inline,
       className,
@@ -164,7 +176,7 @@ export function createMarkdownComponents(
       }
 
       return !inline && match ? (
-        <div className="rounded-xl overflow-hidden my-6 shadow-lg border border-slate-700/50">
+        <div className="rounded-xl overflow-hidden my-6 border border-slate-800">
           <SyntaxHighlighter
             style={vscDarkPlus}
             language={language}
@@ -186,7 +198,7 @@ export function createMarkdownComponents(
         <code
           className={`${
             inline
-              ? "bg-slate-100 text-rgb-red font-mono text-sm px-1.5 py-0.5 rounded border border-slate-200"
+              ? "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 font-mono text-[0.875em] px-1.5 py-0.5 rounded"
               : className
           }`}
           {...props}
@@ -195,26 +207,31 @@ export function createMarkdownComponents(
         </code>
       );
     },
-    pre: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+    pre: ({ children }: React.ComponentProps<"pre"> & ExtraProps) => (
+      <>{children}</>
+    ),
     blockquote: ({ ...props }) => (
       <blockquote
-        className="border-l-4 border-rgb-green bg-gradient-to-r from-rgb-green/5 to-transparent p-6 my-6 text-slate-700 italic rounded-r-lg"
+        className="border-l-4 border-rgb-green bg-rgb-green/5 px-6 py-1 my-6 text-slate-700 dark:text-slate-300 rounded-r-lg"
         {...props}
       />
     ),
-    img: ({ src, alt, ...props }: { src?: string; alt?: string }) => {
+    img: ({ src, alt, ...props }: React.ComponentProps<"img"> & ExtraProps) => {
+      const imageSrc = typeof src === "string" ? src : undefined;
       // Detect badge images (shields.io, badge.fury.io, etc.)
       const isBadge =
-        src?.includes("shields.io") ||
-        src?.includes("badge.fury.io") ||
-        src?.includes("badgen.net") ||
-        src?.includes("img.shields.io");
+        imageSrc?.includes("shields.io") ||
+        imageSrc?.includes("badge.fury.io") ||
+        imageSrc?.includes("badgen.net") ||
+        imageSrc?.includes("img.shields.io");
 
       if (isBadge) {
         return (
           <img
             className="inline-block h-5 mr-1"
-            src={resolveImagePath(src, basePath)}
+            src={
+              typeof src === "string" ? resolveImagePath(src, basePath) : src
+            }
             alt={alt}
             {...props}
           />
@@ -223,38 +240,51 @@ export function createMarkdownComponents(
 
       return (
         <img
-          className="max-w-full h-auto rounded-xl shadow-lg my-8 mx-auto"
-          src={resolveImagePath(src, basePath)}
+          className="max-w-full h-auto rounded-xl my-8 mx-auto dark:bg-white dark:p-2"
+          src={typeof src === "string" ? resolveImagePath(src, basePath) : src}
           alt={alt}
           {...props}
         />
       );
     },
     table: ({ ...props }) => (
-      <div className="overflow-x-auto my-8 rounded-lg border border-slate-200 shadow-sm">
-        <table className="min-w-full divide-y divide-slate-200" {...props} />
+      <div className="overflow-x-auto my-8 rounded-lg border border-slate-200 dark:border-slate-800">
+        <table
+          className="min-w-full divide-y divide-slate-200 dark:divide-slate-800"
+          {...props}
+        />
       </div>
     ),
-    thead: ({ ...props }) => <thead className="bg-slate-50" {...props} />,
+    thead: ({ ...props }) => (
+      <thead className="bg-slate-50 dark:bg-slate-900" {...props} />
+    ),
     th: ({ ...props }) => (
       <th
-        className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider"
+        className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider"
         {...props}
       />
     ),
     tbody: ({ ...props }) => (
-      <tbody className="bg-white divide-y divide-slate-200" {...props} />
-    ),
-    tr: ({ ...props }) => (
-      <tr className="hover:bg-slate-50 transition-colors" {...props} />
-    ),
-    td: ({ ...props }) => (
-      <td
-        className="px-6 py-4 whitespace-nowrap text-sm text-slate-600"
+      <tbody
+        className="divide-y divide-slate-200 dark:divide-slate-800"
         {...props}
       />
     ),
-    hr: ({ ...props }) => <hr className="my-12 border-slate-200" {...props} />,
+    tr: ({ ...props }) => (
+      <tr
+        className="hover:bg-slate-50 dark:hover:bg-slate-900/60 transition-colors"
+        {...props}
+      />
+    ),
+    td: ({ ...props }) => (
+      <td
+        className="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+        {...props}
+      />
+    ),
+    hr: ({ ...props }) => (
+      <hr className="my-12 border-slate-200 dark:border-slate-800" {...props} />
+    ),
   };
 }
 
@@ -264,14 +294,13 @@ export default function MarkdownRenderer({
   linkBasePath,
   routeBase,
 }: MarkdownRendererProps) {
-  const components = createMarkdownComponents(
-    basePath,
-    linkBasePath,
-    routeBase,
+  const components = useMemo(
+    () => createMarkdownComponents(basePath, linkBasePath, routeBase),
+    [basePath, linkBasePath, routeBase],
   );
 
   return (
-    <div className="prose prose-lg prose-slate max-w-none">
+    <div className="max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}

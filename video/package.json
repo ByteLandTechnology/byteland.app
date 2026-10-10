@@ -1,0 +1,27 @@
+{
+  "name": "byteland-video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Remotion sources for the videos shown on byteland.app",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "tsx scripts/render.ts"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@remotion/bundler": "4.0.528",
+    "@remotion/cli": "4.0.528",
+    "@remotion/renderer": "4.0.528",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "remotion": "4.0.528"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "tsx": "^4.19.4",
+    "typescript": "^5"
+  }
+}

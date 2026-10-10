@@ -3,6 +3,17 @@ const path = require("path");
 
 const matter = require("gray-matter");
 
+// Mirrors isPublished() in src/lib/blog.ts: skip drafts and future-dated posts.
+const isPublished = (data) => {
+  if (data.draft) return false;
+  if (!data.date) return true;
+  const date =
+    data.date instanceof Date
+      ? data.date.toISOString().slice(0, 10)
+      : String(data.date).slice(0, 10);
+  return date <= new Date().toISOString().slice(0, 10);
+};
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: "https://byteland.app",
@@ -10,7 +21,8 @@ module.exports = {
   outDir: "out",
   generateIndexSitemap: false,
   sitemapSize: 7000,
-  exclude: ["/404"],
+  // /opensource only redirects to /#projects.
+  exclude: ["/404", "/opensource"],
 
   additionalPaths: async (config) => {
     const result = [];
@@ -35,6 +47,7 @@ module.exports = {
 
           const fileContents = fs.readFileSync(fullPath, "utf8");
           const { data } = matter(fileContents);
+          if (!isPublished(data)) continue;
 
           result.push({
             loc: `/blog/${slug}`,
@@ -58,7 +71,9 @@ module.exports = {
       "projects.ts",
     );
     if (fs.existsSync(projectsConfigPath)) {
-      const content = fs.readFileSync(projectsConfigPath, "utf8");
+      // Only scan the projects array; categories also carry `id` fields.
+      const source = fs.readFileSync(projectsConfigPath, "utf8");
+      const content = source.slice(source.indexOf("export const projects"));
       // Regex to find id: "..."
       const idRegex = /id:\s*["']([^"']+)["']/g;
       let match;

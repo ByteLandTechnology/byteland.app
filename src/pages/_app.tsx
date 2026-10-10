@@ -1,24 +1,40 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { MotionConfig } from "framer-motion";
+import { useRouter } from "next/router";
 import "../index.css";
 import { usePageTracking } from "../hooks/usePageTracking";
-import { usePageTitle } from "../hooks/usePageTitle";
 import { useClarity } from "../hooks/useClarity";
-import ScrollToTop from "../components/ScrollToTop";
+import { useViewTransitions } from "../hooks/useViewTransitions";
+import { useScrollToTop } from "../hooks/useScrollToTop";
+import { DEFAULT_TITLE, getPageConfig } from "../config/pages";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   usePageTracking();
-  usePageTitle();
   useClarity();
+  useViewTransitions();
+  useScrollToTop();
+
+  // Rendered at build time so static HTML carries the right title.
+  // Detail pages override this with their own <Head><title>.
+  const config = getPageConfig(router.pathname);
+  const title = config?.metaTitle ?? DEFAULT_TITLE;
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ByteLand</title>
+        <title>{title}</title>
+        <meta
+          key="description"
+          name="description"
+          content="ByteLand Technology builds open-source tools for terminal UIs, WebAssembly layout and Ghidra-powered reverse engineering."
+        />
       </Head>
-      <ScrollToTop />
-      <Component {...pageProps} />
+      <MotionConfig reducedMotion="user">
+        <Component {...pageProps} />
+      </MotionConfig>
     </>
   );
 }

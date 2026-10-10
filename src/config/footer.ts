@@ -1,11 +1,18 @@
-export const DEFAULT_FOOTER_LINKS = [
+export const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Blog" },
+];
+
+export const FOOTER_SECTIONS = [
   {
-    title: "Links",
+    title: "Site",
+    items: NAV_LINKS,
+  },
+  {
+    title: "Connect",
     items: [
-      { label: "Home", to: "/" },
-      { label: "Products", to: "/#products" },
-      { label: "Open Source", to: "/opensource" },
-      { label: "About", to: "/about" },
+      { label: "GitHub", href: "https://github.com/ByteLandTechnology" },
+      { label: "info@byteland.app", href: "mailto:info@byteland.app" },
     ],
   },
 ];

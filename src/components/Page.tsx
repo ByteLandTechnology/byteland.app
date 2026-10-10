@@ -1,23 +1,18 @@
 import { ReactNode } from "react";
 import Header from "./Header";
-import Footer, { FooterConfig } from "./Footer";
+import Footer from "./Footer";
 
 interface PageProps {
   children: ReactNode;
-  footerConfig?: FooterConfig;
   className?: string;
 }
 
-export default function Page({
-  children,
-  footerConfig,
-  className = "bg-slate-50",
-}: PageProps) {
+export default function Page({ children, className = "" }: PageProps) {
   return (
-    <div className={`min-h-screen font-sans ${className}`}>
+    <div className={`min-h-screen flex flex-col font-sans ${className}`}>
       <Header />
-      <main className="pt-16">{children}</main>
-      <Footer config={footerConfig} />
+      <main className="pt-16 flex-1">{children}</main>
+      <Footer />
     </div>
   );
 }

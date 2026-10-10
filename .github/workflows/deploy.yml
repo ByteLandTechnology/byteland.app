@@ -4,6 +4,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # Daily rebuild so blog posts dated in the future go live on their date.
+  schedule:
+    - cron: "17 1 * * *"
 
 permissions:
   contents: write
@@ -27,6 +30,23 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Videos are rendered from the Remotion sources in video/ (which reuse
+      # the site's art and project config) and cached until those change.
+      - name: Restore rendered videos
+        id: videos
+        uses: actions/cache@v4
+        with:
+          path: public/videos
+          key: videos-${{ hashFiles('video/**', 'src/components/art/**', 'src/config/projects.ts', 'src/config/project-pages.ts') }}
+
+      - name: Render videos
+        if: steps.videos.outputs.cache-hit != 'true'
+        working-directory: video
+        run: |
+          npm ci
+          npx remotion browser ensure
+          npm run render
 
       - name: Build
         run: npm run build
