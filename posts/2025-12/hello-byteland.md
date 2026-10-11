@@ -18,24 +18,18 @@ Our core mission is to create innovative cross-platform applications for mobile 
 
 This blog will be our primary channel for sharing what we're working on and what we're learning along the way. You can expect to see a variety of content here, including:
 
-- **Product Announcements:** Be the first to know about our new apps and major updates.
+- **Project Announcements:** Be the first to know about our new releases and major updates.
 - **Tech Deep Dives:** We'll share our experiences and tutorials on the technologies we use, from Progressive Web Apps to cross-platform development with frameworks like Flutter and React Native.
 - **Design Insights:** A look into our process for creating user-friendly and beautiful interfaces.
 - **Company News:** Updates on our journey as a company as we grow and evolve.
 
 ## The Road Ahead
 
-We are just getting started, and our roadmap is filled with exciting projects. Our initial focus is on three core products that represent our diverse interests and skills:
-
-1.  **Jules GO:** An intelligent, mobile-first pair programmer that brings the power of Google's Jules API to your fingertips, allowing you to code and collaborate from anywhere.
-2.  **Seelist:** A personal tracker for your movie and TV show watchlist, powered by the TMDB API and designed for cinephiles.
-3.  **JoyDex:** The ultimate companion for Pokémon trainers, featuring a comprehensive database and a joyful interface to track your journey.
-
-These applications are the first step in our journey. We plan to continuously improve them and explore new ideas that can make a positive impact on your digital life.
+We are just getting started. Most of our work happens in the open: you can follow our libraries and tools, from terminal UI components to layout engines, on our [Projects](/opensource) page and on [GitHub](https://github.com/ByteLandTechnology).
 
 ## Let's Connect
 
-We're building ByteLand for you, and we can't do it without your feedback and support. We invite you to explore our first products, share your thoughts, and join our community.
+We're building ByteLand for you, and we can't do it without your feedback and support. We invite you to explore our open-source projects, share your thoughts, and join our community.
 
 Thank you for joining us on day one. The journey ahead is long, and we're thrilled to have you with us.
 
