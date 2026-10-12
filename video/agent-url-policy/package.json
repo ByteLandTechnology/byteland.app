@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:brand": "node build-brand.cjs",
+    "typecheck": "tsc --noEmit",
+    "build:audio": "python3 scripts/build-audio.py",
+    "export:svg": "node export.cjs",
+    "render:frames": "python3 render-frames.py",
+    "render:film": "python3 scripts/render-film.py",
+    "render": "npm run build:brand && npm run build:audio && npm run export:svg && npm run render:frames && npm run render:film && python3 scripts/mux.py",
+    "preview": "remotion studio src/index.tsx",
+    "render:remotion": "remotion render src/index.tsx AgentURLPolicy out/remotion.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.3"
+  },
+  "name": "@byteland/agent-url-policy-video-source"
+}

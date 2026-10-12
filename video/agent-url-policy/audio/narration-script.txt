@@ -1,0 +1,21 @@
+An agent can read a page.
+But which address can it connect to?
+Cloudflare added a new web fetch tool.
+We tested the published code with local responses.
+Twenty seven cases gave the specified results.
+The policy rejected private address forms.
+It examined each redirect target before the next fetch call.
+But a permitted hostname does not establish the destination address.
+This policy does not resolve domain names.
+Network controls need their own test.
+The runtime also matters.
+Workers can use different network connections.
+A private network binding changes which services an application can contact.
+A second change affects page conversion.
+Cloudflare now streams converted Markdown without a content length header.
+Our test used a smaller body limit.
+Eight bytes were accepted.
+Nine bytes were rejected, even without that header.
+Use a small host list.
+Keep redirect checks and response limits.
+Examine the network configuration before the agent connects.

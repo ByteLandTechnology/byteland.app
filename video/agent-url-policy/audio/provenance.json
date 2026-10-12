@@ -1,0 +1,10 @@
+{
+  "model": "Chatterbox Nano",
+  "stock_voice": "Official bundled conds.pt",
+  "model_revision": "71ccd1d0081b430592cea481f4307e764e07bc64",
+  "script_sha256": "e3adcd9bd9e7d942c5e91aa119605241efd150bf6f2150e72ea268646b9b7734",
+  "audio_sha256": "31be1a9b04497b3c94482813d8b0a58ec72add7e70db63559c718845416fa704",
+  "sample_rate": 24000,
+  "duration": 57.46,
+  "seed": 42
+}

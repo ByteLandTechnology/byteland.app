@@ -1,3 +1,4 @@
+import BrandLogo from "./BrandLogo";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -113,11 +114,7 @@ export default function Header() {
           scroll={false}
           className="flex items-center gap-2.5 group"
         >
-          <img
-            src="/assets/images/logo.svg"
-            alt="ByteLand logo"
-            className="site-motion-logo h-8 w-auto"
-          />
+          <BrandLogo />
           <span className="text-xl font-extrabold tracking-tight font-brand text-gradient-tri">
             ByteLand
           </span>

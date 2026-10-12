@@ -1,0 +1,86 @@
+WEBVTT
+
+1
+00:00:04.140 --> 00:00:05.500 line:80% position:50% align:center
+智能体可以读取网页。
+
+2
+00:00:05.821 --> 00:00:07.321 line:80% position:50% align:center
+但它能连接到哪个地址？
+
+3
+00:00:08.862 --> 00:00:10.882 line:80% position:50% align:center
+Cloudflare 新增了一个网页抓取工具。
+
+4
+00:00:11.663 --> 00:00:14.244 line:80% position:50% align:center
+我们用本地响应测试了发布的代码。
+
+5
+00:00:15.064 --> 00:00:17.525 line:80% position:50% align:center
+二十七项测试均得到预期结果。
+
+6
+00:00:18.605 --> 00:00:20.986 line:80% position:50% align:center
+策略拒绝了私有地址形式。
+
+7
+00:00:21.406 --> 00:00:24.227 line:80% position:50% align:center
+它在下一次抓取调用前检查每个重定向目标。
+
+8
+00:00:24.727 --> 00:00:27.848 line:80% position:50% align:center
+但主机名获准，并不表示已确定目标地址。
+
+9
+00:00:28.829 --> 00:00:31.129 line:80% position:50% align:center
+这项策略不会解析域名。
+
+10
+00:00:32.110 --> 00:00:33.970 line:80% position:50% align:center
+网络控制措施需要单独测试。
+
+11
+00:00:34.711 --> 00:00:36.171 line:80% position:50% align:center
+运行环境也很重要。
+
+12
+00:00:36.431 --> 00:00:38.472 line:80% position:50% align:center
+Workers 可以使用不同的网络连接方式。
+
+13
+00:00:38.752 --> 00:00:42.593 line:80% position:50% align:center
+私有网络绑定会改变应用可以连接的服务范围。
+
+14
+00:00:42.994 --> 00:00:44.854 line:80% position:50% align:center
+另一项变化涉及网页转换。
+
+15
+00:00:45.214 --> 00:00:48.455 line:80% position:50% align:center
+Cloudflare 现在以流式方式提供转换后的
+Markdown，不再附带内容长度标头。
+
+16
+00:00:48.896 --> 00:00:50.536 line:80% position:50% align:center
+我们的测试采用了较小的响应体限制。
+
+17
+00:00:50.576 --> 00:00:51.697 line:80% position:50% align:center
+八字节被接受。
+
+18
+00:00:52.057 --> 00:00:54.258 line:80% position:50% align:center
+九字节被拒绝，即使没有这个标头。
+
+19
+00:00:55.098 --> 00:00:56.338 line:80% position:50% align:center
+使用范围有限的主机列表。
+
+20
+00:00:56.598 --> 00:00:58.399 line:80% position:50% align:center
+保留重定向检查和响应限制。
+
+21
+00:00:58.679 --> 00:01:01.300 line:80% position:50% align:center
+在智能体连接前，检查网络配置。

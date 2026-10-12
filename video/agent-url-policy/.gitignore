@@ -1,0 +1,9 @@
+node_modules
+out/
+public/narration-sfx.wav
+src/brand-render-data.json
+__pycache__/
+.mesa-cache/
+renderer/.mesa-cache/
+*.tsbuildinfo
+.venv/

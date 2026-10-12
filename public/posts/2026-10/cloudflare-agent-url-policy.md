@@ -17,7 +17,7 @@ draft: false
   <track kind="subtitles" src="/posts/2026-10/cloudflare-agent-url-policy/captions.ja.vtt" srcLang="ja" label="日本語" />
   Your browser does not support embedded video. <a href="/posts/2026-10/cloudflare-agent-url-policy/agent-url-policy.mp4">Download the video</a>.
 </video>
-<figcaption id="test-video-caption" style={{marginTop: "12px", fontSize: "0.875rem", lineHeight: 1.6}}>The video shows the test scope. External subtitles are available in English, Simplified Chinese, Traditional Chinese, and Japanese.</figcaption>
+<figcaption id="test-video-caption" style={{marginTop: "12px", fontSize: "0.875rem", lineHeight: 1.6}}>The video shows the test scope.</figcaption>
 </figure>
 
 Cloudflare added a `web_fetch` tool in `agents@0.28.0`. Its release date is October 9, 2026, at 14:05 UTC. We operated the published fetch source with local responses. All 27 results agreed with the specified results.

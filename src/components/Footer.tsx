@@ -1,3 +1,4 @@
+import BrandLogo from "./BrandLogo";
 import Link from "next/link";
 import { FOOTER_SECTIONS } from "../config/footer";
 
@@ -16,11 +17,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-[2fr_1fr_1fr]">
           <div>
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <img
-                src="/assets/images/logo.svg"
-                alt="ByteLand logo"
-                className="h-8 w-auto"
-              />
+              <BrandLogo />
               <span className="text-lg font-extrabold font-brand text-gradient-tri">
                 ByteLand
               </span>
