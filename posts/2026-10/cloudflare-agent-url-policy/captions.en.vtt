@@ -1,0 +1,94 @@
+WEBVTT
+
+1
+00:00:04.140 --> 00:00:05.500 line:80% position:50% align:center
+An agent can read a page.
+
+2
+00:00:05.821 --> 00:00:07.321 line:80% position:50% align:center
+But which address can it connect to?
+
+3
+00:00:08.862 --> 00:00:10.882 line:80% position:50% align:center
+Cloudflare added a new web fetch tool.
+
+4
+00:00:11.663 --> 00:00:14.244 line:80% position:50% align:center
+We tested the published code with local
+responses.
+
+5
+00:00:15.064 --> 00:00:17.525 line:80% position:50% align:center
+Twenty seven cases gave the specified
+results.
+
+6
+00:00:18.605 --> 00:00:20.986 line:80% position:50% align:center
+The policy rejected private address forms.
+
+7
+00:00:21.406 --> 00:00:24.227 line:80% position:50% align:center
+It examined each redirect target before
+the next fetch call.
+
+8
+00:00:24.727 --> 00:00:27.848 line:80% position:50% align:center
+But a permitted hostname does not
+establish the destination address.
+
+9
+00:00:28.829 --> 00:00:31.129 line:80% position:50% align:center
+This policy does not resolve domain names.
+
+10
+00:00:32.110 --> 00:00:33.970 line:80% position:50% align:center
+Network controls need their own test.
+
+11
+00:00:34.711 --> 00:00:36.171 line:80% position:50% align:center
+The runtime also matters.
+
+12
+00:00:36.431 --> 00:00:38.472 line:80% position:50% align:center
+Workers can use different network
+connections.
+
+13
+00:00:38.752 --> 00:00:42.593 line:80% position:50% align:center
+A private network binding changes which
+services an application can contact.
+
+14
+00:00:42.994 --> 00:00:44.854 line:80% position:50% align:center
+A second change affects page conversion.
+
+15
+00:00:45.214 --> 00:00:48.455 line:80% position:50% align:center
+Cloudflare now streams converted Markdown
+without a content length header.
+
+16
+00:00:48.896 --> 00:00:50.536 line:80% position:50% align:center
+Our test used a smaller body limit.
+
+17
+00:00:50.576 --> 00:00:51.697 line:80% position:50% align:center
+Eight bytes were accepted.
+
+18
+00:00:52.057 --> 00:00:54.258 line:80% position:50% align:center
+Nine bytes were rejected, even without
+that header.
+
+19
+00:00:55.098 --> 00:00:56.338 line:80% position:50% align:center
+Use a small host list.
+
+20
+00:00:56.598 --> 00:00:58.399 line:80% position:50% align:center
+Keep redirect checks and response limits.
+
+21
+00:00:58.679 --> 00:01:01.300 line:80% position:50% align:center
+Examine the network configuration before
+the agent connects.
