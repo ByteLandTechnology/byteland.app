@@ -1,0 +1,86 @@
+WEBVTT
+
+1
+00:00:04.140 --> 00:00:05.500 line:80% position:50% align:center
+智慧代理可以讀取網頁。
+
+2
+00:00:05.821 --> 00:00:07.321 line:80% position:50% align:center
+但它能連線到哪個位址？
+
+3
+00:00:08.862 --> 00:00:10.882 line:80% position:50% align:center
+Cloudflare 新增了一個網頁擷取工具。
+
+4
+00:00:11.663 --> 00:00:14.244 line:80% position:50% align:center
+我們用本機回應測試了發布的程式碼。
+
+5
+00:00:15.064 --> 00:00:17.525 line:80% position:50% align:center
+二十七項測試均得到預期結果。
+
+6
+00:00:18.605 --> 00:00:20.986 line:80% position:50% align:center
+策略拒絕了私有位址形式。
+
+7
+00:00:21.406 --> 00:00:24.227 line:80% position:50% align:center
+它在下一次擷取呼叫前檢查每個重新導向目標。
+
+8
+00:00:24.727 --> 00:00:27.848 line:80% position:50% align:center
+但主機名稱獲准，並不表示已確定目標位址。
+
+9
+00:00:28.829 --> 00:00:31.129 line:80% position:50% align:center
+這項策略不會解析網域名稱。
+
+10
+00:00:32.110 --> 00:00:33.970 line:80% position:50% align:center
+網路控制措施需要單獨測試。
+
+11
+00:00:34.711 --> 00:00:36.171 line:80% position:50% align:center
+執行環境也很重要。
+
+12
+00:00:36.431 --> 00:00:38.472 line:80% position:50% align:center
+Workers 可以使用不同的網路連線方式。
+
+13
+00:00:38.752 --> 00:00:42.593 line:80% position:50% align:center
+私有網路繫結會改變應用程式可以連線的服務範圍。
+
+14
+00:00:42.994 --> 00:00:44.854 line:80% position:50% align:center
+另一項變化涉及網頁轉換。
+
+15
+00:00:45.214 --> 00:00:48.455 line:80% position:50% align:center
+Cloudflare 現在以串流方式提供轉換後的
+Markdown，不再附帶內容長度標頭。
+
+16
+00:00:48.896 --> 00:00:50.536 line:80% position:50% align:center
+我們的測試採用了較小的回應本文限制。
+
+17
+00:00:50.576 --> 00:00:51.697 line:80% position:50% align:center
+八位元組被接受。
+
+18
+00:00:52.057 --> 00:00:54.258 line:80% position:50% align:center
+九位元組被拒絕，即使沒有這個標頭。
+
+19
+00:00:55.098 --> 00:00:56.338 line:80% position:50% align:center
+使用範圍有限的主機清單。
+
+20
+00:00:56.598 --> 00:00:58.399 line:80% position:50% align:center
+保留重新導向檢查和回應限制。
+
+21
+00:00:58.679 --> 00:01:01.300 line:80% position:50% align:center
+在智慧代理連線前，檢查網路設定。
