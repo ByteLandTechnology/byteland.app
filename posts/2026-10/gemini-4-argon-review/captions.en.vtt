@@ -1,0 +1,70 @@
+WEBVTT
+
+1
+00:00:04.150 --> 00:00:08.773
+Google pitches Gemini 4 Argon for tougher coding and
+longer tasks.
+
+2
+00:00:08.873 --> 00:00:13.262
+Unveiled September thirtieth, it reached paid users on
+October thirteenth.
+
+3
+00:00:14.100 --> 00:00:20.957
+Its stable API accepts text, images, video, audio, and
+PDFs, but returns text.
+
+4
+00:00:21.057 --> 00:00:25.404
+A million-token shared budget includes input,
+thinking, and output.
+
+5
+00:00:26.100 --> 00:00:31.364
+Google's eleven-hour coding case shipped two of six
+proposals after review.
+
+6
+00:00:31.464 --> 00:00:36.707
+That's promising for difficult work, but it also shows
+why human checks still matter.
+
+7
+00:00:38.100 --> 00:00:40.313
+Independent rankings disagree.
+
+8
+00:00:40.413 --> 00:00:46.637
+Argon leads Vals Index, while Artificial Analysis
+ranks its high-effort setting eighth.
+
+9
+00:00:46.737 --> 00:00:49.249
+Different tests answer different questions.
+
+10
+00:00:50.100 --> 00:00:52.185
+Early Reddit feedback is mixed.
+
+11
+00:00:52.285 --> 00:00:57.677
+Some praise speed and security analysis; others report
+architectural misses.
+
+12
+00:00:57.777 --> 00:01:00.396
+These are anecdotes, not controlled tests.
+
+13
+00:01:01.100 --> 00:01:03.697
+Try it on a task with a clear finish line.
+
+14
+00:01:03.797 --> 00:01:07.461
+Compare useful results, elapsed time, and total cost.
+
+15
+00:01:07.561 --> 00:01:10.905
+Promising for hard work; keep the evidence in view.
+
