@@ -29,6 +29,16 @@ lockfile or version pin, fixtures, license information, commands and results wit
 working public link upon approval. Test those instructions from a clean checkout.
 Do not publish a command pointing to a private or missing `experiment/` directory.
 
+## Editorial relevance gate
+
+Every section must directly help the reader understand the selected topic or make a
+relevant decision. Do not add padding to satisfy an experiment or article-length
+checklist. Run hands-on tests only when they answer a meaningful question about the
+subject. A synthetic checker test is not evidence of the featured model's ability.
+If access is unavailable, state the limitation briefly and use source-backed analysis.
+Keep unrelated test records in review evidence, not the public article or video.
+Remove a section when its result does not change the reader's understanding or action.
+
 ## STE and voice
 
 Write in English using ASD-STE100 Issue 9 as the target. Keep prose natural, precise
