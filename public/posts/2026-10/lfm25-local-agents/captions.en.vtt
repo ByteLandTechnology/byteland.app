@@ -1,0 +1,79 @@
+WEBVTT
+
+1
+00:00:04.150 --> 00:00:08.251
+Liquid AI's new reasoning model targets local agents.
+
+2
+00:00:08.351 --> 00:00:13.252
+Its name highlights active compute, but that is only
+one part of deployment.
+
+3
+00:00:14.100 --> 00:00:20.495
+The model has twenty-four billion parameters, with
+about two point four five billion active per token.
+
+4
+00:00:20.595 --> 00:00:24.749
+The Q-four weight file alone is fourteen point five
+gigabytes.
+
+5
+00:00:24.849 --> 00:00:27.255
+Runtime memory needs more room.
+
+6
+00:00:28.100 --> 00:00:31.465
+Liquid reports fast decoding on an M-five Max.
+
+7
+00:00:31.565 --> 00:00:36.359
+Its much larger B-three-hundred number combines many
+concurrent requests.
+
+8
+00:00:36.459 --> 00:00:39.269
+Neither number is the time to finish your task.
+
+9
+00:00:40.100 --> 00:00:41.844
+The published results are mixed.
+
+10
+00:00:41.944 --> 00:00:47.517
+Liquid reports stronger tool-task scores than Qwen in
+some tests, but lower coding scores.
+
+11
+00:00:47.617 --> 00:00:51.195
+These are vendor measurements, not independent
+confirmation.
+
+12
+00:00:52.100 --> 00:00:54.975
+A local model still needs an agent harness.
+
+13
+00:00:55.075 --> 00:00:58.716
+That software controls tools, permissions, and
+recovery.
+
+14
+00:00:58.816 --> 00:01:02.224
+External search can still send data off the device.
+
+15
+00:01:03.100 --> 00:01:07.895
+Choose by available memory, your actual tasks, and
+acceptable delay.
+
+16
+00:01:07.995 --> 00:01:10.976
+Check the model license before commercial use.
+
+17
+00:01:11.076 --> 00:01:16.596
+Fast token generation is useful when the whole system
+delivers the right result.
+
