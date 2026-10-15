@@ -4,7 +4,7 @@ date: "2026-10-15"
 description: "Liquid AI's new local-agent model separates active compute from memory needs. Read its speed claims, mixed benchmark results, and deployment limits."
 tags: [AI, AI Agents]
 author: "The ByteLand Team"
-image: "./lfm25-local-agents/cover.svg"
+image: "./lfm25-local-agents/cover.svg?v=2"
 draft: false
 ---
 
