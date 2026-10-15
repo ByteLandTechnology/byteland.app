@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="620" viewBox="0 0 800 620" role="img" aria-labelledby="t d"><title id="t">Local model, controlled tool loop</title><desc id="d">The model proposes a tool call. A harness checks permissions and executes an allowed tool. External search crosses the local device boundary. Moving connectors stop after three cycles and are static with reduced motion.</desc><style>text{font-family:DejaVu Sans,sans-serif;fill:#172033}.sub{fill:#536176}.small{font-size:25px}.label{font-size:29px;font-weight:700}.flow{stroke-dasharray:10 9;animation:flow 1.6s linear 3}@keyframes flow{to{stroke-dashoffset:-38}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style><rect width="800" height="620" rx="24" fill="#f6f9fc"/>
+
+<text x="36" y="55" class="label">The harness controls the action</text>
+<rect x="25" y="85" width="750" height="340" rx="20" fill="white" stroke="#94a7bf" stroke-width="2" stroke-dasharray="8 7"/>
+<text x="48" y="122" class="small sub">LOCAL DEVICE</text>
+<rect x="48" y="155" width="277" height="116" rx="16" fill="#e5f0ff"/>
+<text x="70" y="201" class="label">Model</text><text x="70" y="243" class="small">Proposes a tool call</text>
+<path d="M335 213H442" stroke="#0066d6" stroke-width="4" class="flow"/>
+<path d="M430 201L450 213L430 225Z" fill="#0066d6"/><rect x="458" y="155" width="291" height="116" rx="16" fill="#e5f5e9"/>
+<text x="480" y="201" class="label">Harness</text><text x="480" y="243" class="small">Checks permission</text>
+<path d="M600 283V317H200V283" stroke="#0066d6" stroke-width="3" fill="none"/>
+<path d="M188 291L200 273L212 291Z" fill="#0066d6"/><text x="164" y="369" class="small">Allowed tool runs → result returns</text>
+<path d="M600 426V475" stroke="#d32f25" stroke-width="4"/>
+<rect x="36" y="480" width="728" height="95" rx="16" fill="#ffebe9"/>
+<text x="60" y="521" class="label">External search / remote service</text><text x="60" y="558" class="small">Data can leave the device here.</text>
+</svg>

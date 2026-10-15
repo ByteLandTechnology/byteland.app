@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="620" viewBox="0 0 800 620" role="img" aria-labelledby="t d"><title id="t">Compute and memory are different budgets</title><desc id="d">A schematic expert block selects four of sixty-four experts for a token. The weight file, context state, and runtime buffers all affect memory use. Diagram is not to scale.</desc><style>text{font-family:DejaVu Sans,sans-serif;fill:#172033}.sub{fill:#536176}.small{font-size:25px}.label{font-size:29px;font-weight:700}.flow{stroke-dasharray:10 9;animation:flow 1.6s linear 3}@keyframes flow{to{stroke-dashoffset:-38}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style><rect width="800" height="620" rx="24" fill="#f6f9fc"/>
+<text x="36" y="55" class="label">Selected work ≠ total weights</text>
+<rect x="36" y="85" width="728" height="265" rx="18" fill="white" stroke="#c9d5e4"/>
+<text x="60" y="130" class="label">One expert block: 4 of 64 selected</text>
+<text x="60" y="170" class="small sub">Illustrative subset; not to scale</text>
+<rect x="60" y="205" width="64" height="64" rx="10" fill="#007aff"/><rect x="143" y="205" width="64" height="64" rx="10" fill="#34c759"/><rect x="226" y="205" width="64" height="64" rx="10" fill="#007aff"/><rect x="309" y="205" width="64" height="64" rx="10" fill="#34c759"/><rect x="392" y="205" width="64" height="64" rx="10" fill="#e4eaf2"/><rect x="475" y="205" width="64" height="64" rx="10" fill="#e4eaf2"/><rect x="558" y="205" width="64" height="64" rx="10" fill="#e4eaf2"/><rect x="641" y="205" width="64" height="64" rx="10" fill="#e4eaf2"/>
+<text x="60" y="315" class="small">Inactive experts remain part of the model.</text>
+<text x="36" y="403" class="label">Plan memory for more than the file</text>
+<rect x="36" y="431" width="340" height="100" rx="14" fill="#e5f0ff"/>
+<text x="54" y="470" class="label">Q4_K_M: 14.5 GB</text><text x="54" y="508" class="small sub">Published weight-file size</text>
+<text x="396" y="493" font-size="42">+</text>
+<rect x="441" y="431" width="323" height="100" rx="14" fill="#e5f5e9"/>
+<text x="460" y="470" class="label">Runtime overhead</text><text x="460" y="508" class="small sub">Context state + buffers</text>
+<text x="36" y="580" class="small sub">Actual RAM / accelerator use depends on setup.</text>
+</svg>
