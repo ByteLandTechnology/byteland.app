@@ -1,0 +1,76 @@
+WEBVTT
+
+1
+00:00:04.700 --> 00:00:07.361
+GitHub separates three security controls.
+
+2
+00:00:07.461 --> 00:00:13.387
+AI Scan and agentic autofix are generally available;
+workflow lockfiles are in preview.
+
+3
+00:00:15.200 --> 00:00:20.272
+AI Scan reviews pull request changes beyond existing
+CodeQL coverage.
+
+4
+00:00:20.372 --> 00:00:24.463
+Its findings are advisory and cannot block merges
+through rulesets.
+
+5
+00:00:24.563 --> 00:00:27.395
+Fork and Dependabot pull requests are excluded.
+
+6
+00:00:29.200 --> 00:00:35.147
+Agentic autofix takes assigned default branch alerts,
+excluding pull request only findings.
+
+7
+00:00:35.247 --> 00:00:39.443
+It proposes changes, rechecks, and opens a draft pull
+request.
+
+8
+00:00:41.200 --> 00:00:45.844
+Validation has limits, especially for custom queries
+and third party alerts.
+
+9
+00:00:45.944 --> 00:00:49.309
+A passed recheck does not prove the entire application
+safe.
+
+10
+00:00:49.409 --> 00:00:51.388
+Review the patch and relevant tests.
+
+11
+00:00:53.200 --> 00:00:56.331
+Lockfiles address moving dependency references.
+
+12
+00:00:56.431 --> 00:01:00.329
+Onboarded workflows run locked commits, even if tags
+move.
+
+13
+00:01:00.429 --> 00:01:02.365
+Locked code still needs review.
+
+14
+00:01:04.200 --> 00:01:09.505
+Investigate findings, verify repairs, and review
+dependency commits.
+
+15
+00:01:09.605 --> 00:01:12.011
+Check policies and credit budgets.
+
+16
+00:01:12.111 --> 00:01:16.500
+Automation supplies evidence; people make the merge
+decision.
+
