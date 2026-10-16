@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="1000" viewBox="0 0 700 1000" role="img" aria-labelledby="t d"><title id="t">Three separate GitHub security controls</title><desc id="d">Pull-request advisory scanning, default-branch repair, and workflow lockfiles are independent mechanisms. The repair arrow moves briefly and respects reduced motion.</desc><style>text{font-family:DejaVu Sans,sans-serif;fill:#172033}.sub{fill:#526174}.label{font-size:31px;font-weight:700}.small{font-size:28px}.flow{stroke-dasharray:10 9;animation:flow 1.6s linear 3}@keyframes flow{to{stroke-dashoffset:-38}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style><rect width="700" height="1000" rx="24" fill="#f6f9fc"/><text x="30" y="52" class="label">Three controls. Different jobs.</text>
+<rect x="30" y="82" width="640" height="225" rx="18" fill="#e8f1ff"/>
+<text x="54" y="128" class="label">1 / Pull-request advisory</text>
+<text x="54" y="178" class="small">AI Scan → findings → human review</text>
+<text x="54" y="228" class="small sub">A review signal, not proof</text>
+<text x="54" y="268" class="small sub">that code is secure.</text>
+<rect x="30" y="335" width="640" height="285" rx="18" fill="#e8f6ed"/>
+<text x="54" y="383" class="label">2 / Default-branch repair</text>
+<text x="54" y="433" class="small">Supported alert → proposed fix</text>
+<text x="54" y="476" class="small">→ validation → draft pull request</text>
+<path class="flow" d="M616 489V515H380" stroke="#238542" stroke-width="3" fill="none"/><path d="M392 508L378 515L392 522" stroke="#238542" stroke-width="3" fill="none"/>
+<text x="54" y="563" class="small sub">The agent can iterate;</text>
+<text x="54" y="601" class="small sub">people approve the result.</text>
+<rect x="30" y="648" width="640" height="225" rx="18" fill="#fff0e8"/>
+<text x="54" y="695" class="label">3 / Workflow dependencies</text>
+<text x="54" y="746" class="small">Reference → locked commit</text>
+<text x="54" y="788" class="small">→ controlled execution</text>
+<text x="54" y="839" class="small sub">Review lockfile updates.</text>
+<text x="30" y="922" class="small sub">Separate mechanisms.</text>
+<text x="30" y="962" class="small sub">No implied automatic handoff.</text></svg>
