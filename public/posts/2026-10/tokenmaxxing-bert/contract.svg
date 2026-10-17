@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="850" viewBox="0 0 760 850" role="img" aria-labelledby="title description"><title id="title">Tokenizer acceptance flow</title><desc id="description">Preserve original source, compare token IDs and source offsets, then measure complete pipeline latency.</desc><style>text{font-family:DejaVu Sans,sans-serif;fill:#172033}.muted{fill:#526174}.flow{stroke-dasharray:8 7;animation:none}@keyframes flow{to{stroke-dashoffset:-30}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style><rect width="760" height="850" rx="24" fill="#f7f9fc"/><text x="36" y="63" font-size="32" font-weight="700">Keep the original-text contract</text>
+<text x="36" y="108" font-size="24" class="muted">A faster path must preserve useful outputs.</text>
+<rect x="36" y="153" width="688" height="150" rx="20" fill="#e8f1ff"/>
+<text x="62" y="203" font-size="30" font-weight="700">1. Keep the source</text><text x="62" y="249" font-size="25">Original bytes + tokenizer configuration</text>
+<path class="flow" d="M380 309V349" stroke="#007aff" stroke-width="4"/><path d="M370 338L380 351L390 338" fill="none" stroke="#007aff" stroke-width="4"/>
+<rect x="36" y="361" width="688" height="192" rx="20" fill="#e8f6ed"/>
+<text x="62" y="411" font-size="30" font-weight="700">2. Compare the outputs</text><text x="62" y="457" font-size="25">Token IDs → model inputs</text><text x="62" y="501" font-size="25">Offsets → spans in the original text</text>
+<path class="flow" d="M380 559V599" stroke="#258b40" stroke-width="4"/><path d="M370 588L380 601L390 588" fill="none" stroke="#258b40" stroke-width="4"/>
+<rect x="36" y="611" width="688" height="150" rx="20" fill="#fff0ec"/>
+<text x="62" y="661" font-size="30" font-weight="700">3. Measure the full pipeline</text><text x="62" y="707" font-size="25">Separate language, length and batch size</text>
+<text x="36" y="813" font-size="24" class="muted">Correct outputs first. Representative timing next.</text></svg>

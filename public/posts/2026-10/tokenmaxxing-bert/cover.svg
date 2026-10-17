@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="562" viewBox="0 0 1000 562" role="img" aria-labelledby="title description"><title id="title">Faster BERT tokenization</title><desc id="description">ByteLand technical article on tokenizer optimization with original-text, token-ID and source-offset contracts.</desc><style>text{font-family:DejaVu Sans,sans-serif;fill:#172033}.muted{fill:#526174}.flow{stroke-dasharray:8 7;animation:none}@keyframes flow{to{stroke-dashoffset:-30}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style><rect width="1000" height="562" rx="24" fill="#f7f9fc"/><svg x="40" y="28" width="72" height="72" viewBox="-80 -80 160 160">
+  <title>ByteLand</title>
+  <desc>Static outline of the approved E3/B5 signed-distance-field logo.</desc>
+  <defs><path id="leaf" d="M-58.63 10.78H2.37A16 16 0 0 1 18.37 26.78V39.78A3 3 0 0 1 15.37 42.78H-45.63A16 16 0 0 1-61.63 26.78V13.78A3 3 0 0 1-58.63 10.78Z"/></defs>
+  <use href="#leaf" fill="#ff3b30" transform="rotate(41)"/>
+  <use href="#leaf" fill="#34c759" transform="rotate(281)"/>
+  <use href="#leaf" fill="#007aff" transform="rotate(161)"/>
+</svg>
+<text x="130" y="75" font-size="24" class="muted">BYTELAND / ENGINEERING NOTES</text><text x="45" y="190" font-size="52" font-weight="700">Faster BERT tokenization</text><text x="45" y="254" font-size="40">Keep the output contract intact.</text><text x="45" y="305" font-size="25" class="muted">An optimization proposal. A concrete compatibility lesson.</text>
+<rect x="45" y="365" width="280" height="115" rx="18" fill="#e8f1ff"/><text x="70" y="414" font-size="30" font-weight="700">Original text</text><text x="70" y="454" font-size="23">Preserve the source</text>
+<rect x="360" y="365" width="280" height="115" rx="18" fill="#e8f6ed"/><text x="385" y="414" font-size="30" font-weight="700">Token IDs</text><text x="385" y="454" font-size="23">Compare model inputs</text>
+<rect x="675" y="365" width="280" height="115" rx="18" fill="#fff0ec"/><text x="700" y="414" font-size="30" font-weight="700">Source offsets</text><text x="700" y="454" font-size="23">Keep spans correct</text></svg>

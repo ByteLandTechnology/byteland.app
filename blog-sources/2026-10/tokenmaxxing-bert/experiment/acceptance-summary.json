@@ -1,0 +1,21 @@
+{
+  "scope": "Baseline acceptance audit only; optimized PR not executed; no speedup measured.",
+  "tokenizers_version": "0.23.2",
+  "python": "3.12.14",
+  "tokenizer_source": "https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json",
+  "tokenizer_sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+  "vocabulary_size": 30522,
+  "cases": 24,
+  "checks": 128,
+  "passed": 126,
+  "failures": [
+    {
+      "name": "chinese:normalizer_idempotent_hypothesis",
+      "passed": false
+    },
+    {
+      "name": "one_cjk:normalizer_idempotent_hypothesis",
+      "passed": false
+    }
+  ]
+}
