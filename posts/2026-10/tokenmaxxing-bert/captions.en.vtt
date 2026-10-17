@@ -1,0 +1,79 @@
+WEBVTT
+
+1
+00:00:04.400 --> 00:00:07.690
+Faster tokenization can help search and retrieval
+systems.
+
+2
+00:00:07.790 --> 00:00:11.400
+Hugging Face shared new BERT optimizations on October
+fifteenth.
+
+3
+00:00:11.500 --> 00:00:13.479
+The work is still a draft pull request.
+
+4
+00:00:14.400 --> 00:00:17.167
+The main idea is to avoid unnecessary work.
+
+5
+00:00:17.267 --> 00:00:23.384
+Skip eligible ASCII ranges, cache Unicode decisions,
+and allocate output only when text changes.
+
+6
+00:00:24.400 --> 00:00:27.413
+A headline speedup is not an application speedup.
+
+7
+00:00:27.513 --> 00:00:30.141
+Test your own languages and input sizes.
+
+8
+00:00:30.241 --> 00:00:33.479
+Short strings and Chinese text need separate
+attention.
+
+9
+00:00:34.400 --> 00:00:37.723
+Compatibility includes token identifiers and source
+offsets.
+
+10
+00:00:37.823 --> 00:00:43.246
+Two spellings of an accented word can produce matching
+tokens, yet refer to different source positions.
+
+11
+00:00:44.400 --> 00:00:46.666
+Our baseline check found a useful trap.
+
+12
+00:00:46.766 --> 00:00:50.099
+Chinese padding can change when normalization runs
+twice.
+
+13
+00:00:50.199 --> 00:00:53.436
+String equality alone is the wrong acceptance
+condition.
+
+14
+00:00:54.400 --> 00:00:56.549
+Pin the tokenizer and vocabulary.
+
+15
+00:00:56.649 --> 00:00:58.777
+Compare outputs before measuring speed.
+
+16
+00:00:58.877 --> 00:01:00.109
+Keep a rollback path.
+
+17
+00:01:00.209 --> 00:01:03.627
+Faster preprocessing matters when the full pipeline
+stays correct.
+
