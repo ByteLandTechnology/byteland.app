@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:04.000 --> 00:00:09.777
+An agent is more than its model. Its harness supplies
+prompts, tools, memory and workflow.
+
+00:00:09.997 --> 00:00:15.649
+Google Research's Harness² changes this surrounding
+system while keeping model weights fixed.
+
+00:00:15.869 --> 00:00:23.014
+For the current task, propose harness edits, probe them
+through execution, then compose a refinement from the
+differences.
+
+00:00:23.234 --> 00:00:29.995
+Parallel recursion explores alternatives. Sequential
+recursion carries a refinement into the next step.
+
+00:00:30.215 --> 00:00:35.887
+A second loop retains adopted harnesses and
+evidence-supported lessons for future tasks.
+
+00:00:36.107 --> 00:00:44.683
+The official local demo fixes a ledger script that
+ignores negative amounts. Scripted editors make this
+example deterministic.
+
+00:00:44.903 --> 00:00:49.029
+It demonstrates the workflow, not a model learning to
+solve new tasks.
+
+00:00:49.249 --> 00:00:57.313
+Start with the local demo. Model-backed experiments
+need a cost budget, isolated execution and controlled
+network access.
