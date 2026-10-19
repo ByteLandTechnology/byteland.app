@@ -1,0 +1,42 @@
+WEBVTT
+
+00:00:04.000 --> 00:00:09.995
+An agent can finish a step, pause for another approval,
+and accidentally repeat work that already finished.
+
+00:00:10.215 --> 00:00:14.247
+LangGraph 1.2.16 fixes several resume bugs.
+
+00:00:14.467 --> 00:00:18.968
+We ran thirteen selected upstream regression cases
+against both versions.
+
+00:00:19.188 --> 00:00:22.921
+The earlier version passed three. The new version
+passed all thirteen.
+
+00:00:23.141 --> 00:00:26.235
+These are local workflow tests, with no model calls.
+
+00:00:26.455 --> 00:00:31.233
+One important lesson is that a correct final state can
+hide repeated actions.
+
+00:00:31.453 --> 00:00:35.379
+Record how often each action runs, as well as the final
+result.
+
+00:00:35.599 --> 00:00:39.417
+The update also fixes duplicated state updates during
+resume.
+
+00:00:39.637 --> 00:00:45.077
+But an interrupted node still starts again from the
+beginning. Work before its pause can run again.
+
+00:00:45.297 --> 00:00:47.665
+Keep each external action safe to repeat.
+
+00:00:47.885 --> 00:00:52.792
+Use a stable operation key, and test your actual
+checkpoint store before deployment.
