@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00:04.000 --> 00:00:11.616
+Moving a tensor must not erase the object around it.
+Transformers five point twenty point two fixes this
+generation bug.
+
+00:00:11.836 --> 00:00:19.111
+The old helper kept tensor values, but changed a model
+output into a plain dictionary. Attribute access then
+failed.
+
+00:00:19.331 --> 00:00:25.773
+We tested two tiny models with random weights. Both
+worked on the normal CPU path in both versions.
+
+00:00:25.993 --> 00:00:31.711
+When we forced the transfer branch, both failed before
+the patch. Both generated tokens after it.
+
+00:00:31.931 --> 00:00:38.331
+The patch rebuilds a dictionary with its original
+class. That preserves model outputs and their nested
+fields.
+
+00:00:38.551 --> 00:00:44.183
+But it is not a universal adapter. A default dictionary
+still failed our separate boundary check.
+
+00:00:44.403 --> 00:00:49.885
+Check values, shapes, and object types. Test the
+transfer path as well as the normal path.
+
+00:00:50.105 --> 00:00:55.140
+These are CPU regression checks, not a GPU test or a
+model quality score.
