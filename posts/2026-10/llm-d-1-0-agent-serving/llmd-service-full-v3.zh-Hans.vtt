@@ -1,0 +1,202 @@
+WEBVTT
+
+NOTE R7 phrase-balanced reflow. Timing within measured narration sections remains approximate; no forced word alignment.
+
+1
+00:00:04.550 --> 00:00:07.147 line:92% position:50% align:center size:92%
+一个编程智能体发出多个长请求。
+
+2
+00:00:07.147 --> 00:00:09.439 line:92% position:50% align:center size:92%
+一位用户提出一个简短问题。
+
+3
+00:00:09.439 --> 00:00:11.731 line:92% position:50% align:center size:92%
+它们共用同一组模型服务器。
+
+4
+00:00:11.731 --> 00:00:14.939 line:92% position:50% align:center size:92%
+服务器正在工作，但用户仍在等待。
+
+5
+00:00:14.939 --> 00:00:17.537 line:92% position:50% align:center size:92%
+问题不一定出在模型。
+
+6
+00:00:17.537 --> 00:00:22.579 line:92% position:50% align:center size:92%
+也可能在于服务如何接纳任务、
+选择服务器，并持续推进请求。
+
+7
+00:00:24.050 --> 00:00:25.736 line:92% position:50% align:center size:92%
+来看三个决策。
+
+8
+00:00:25.736 --> 00:00:28.171 line:92% position:50% align:center size:92%
+这个请求现在能继续处理吗？
+
+9
+00:00:28.171 --> 00:00:30.606 line:92% position:50% align:center size:92%
+应由哪台服务器接收？
+
+10
+00:00:30.606 --> 00:00:34.539 line:92% position:50% align:center size:92%
+升级期间，它的处理路径还能保持兼容吗？
+
+11
+00:00:34.539 --> 00:00:38.473 line:92% position:50% align:center size:92%
+流量控制、路由和发布协调回答的是不同问题。
+
+12
+00:00:38.473 --> 00:00:41.657 line:92% position:50% align:center size:92%
+更换目标服务器并不会创造容量。
+
+13
+00:00:41.657 --> 00:00:45.590 line:92% position:50% align:center size:92%
+再好的队列也无法修复不兼容的处理路径。
+
+14
+00:00:47.050 --> 00:00:52.445 line:92% position:50% align:center size:92%
+llm-d 早已支持缓存感知路由，
+以及分离的预填充和解码资源池。
+
+15
+00:00:52.445 --> 00:01:01.724 line:92% position:50% align:center size:92%
+10月20日发布的1.0版，更强调服务运维：
+共享流量、稳定配置和协调升级。
+
+16
+00:01:01.724 --> 00:01:06.256 line:92% position:50% align:center size:92%
+它可与 vLLM、SGLang 等引擎配合使用。
+
+17
+00:01:06.256 --> 00:01:09.924 line:92% position:50% align:center size:92%
+它不是一个新的语言模型。
+
+18
+00:01:11.550 --> 00:01:17.337 line:92% position:50% align:center size:92%
+配置策略后，可按租户和优先级将请求分入不同流。
+
+19
+00:01:17.337 --> 00:01:21.927 line:92% position:50% align:center size:92%
+调度先看优先级，再在同一优先级内轮流分配。
+
+20
+00:01:21.927 --> 00:01:28.513 line:92% position:50% align:center size:92%
+达到饱和时，任务可以在路由器等待，
+而不是堆入繁忙服务器的队列。
+
+21
+00:01:28.513 --> 00:01:31.506 line:92% position:50% align:center size:92%
+默认行为仍类似先到先服务。
+
+22
+00:01:31.506 --> 00:01:33.701 line:92% position:50% align:center size:92%
+这些策略需要配置。
+
+23
+00:01:33.701 --> 00:01:36.695 line:92% position:50% align:center size:92%
+它们不会创造额外容量。
+
+24
+00:01:38.550 --> 00:01:40.716 line:92% position:50% align:center size:92%
+现在跟随一个智能体请求。
+
+25
+00:01:40.716 --> 00:01:43.216 line:92% position:50% align:center size:92%
+服务器 A 保存着它的前缀缓存。
+
+26
+00:01:43.216 --> 00:01:46.048 line:92% position:50% align:center size:92%
+返回 A 可以避免重复处理提示词。
+
+27
+00:01:46.048 --> 00:01:49.547 line:92% position:50% align:center size:92%
+但 A 可能繁忙，而 B 还有空余容量。
+
+28
+00:01:49.547 --> 00:01:52.380 line:92% position:50% align:center size:92%
+路由器会考虑缓存位置和负载。
+
+29
+00:01:52.380 --> 00:01:56.546 line:92% position:50% align:center size:92%
+这里需要权衡：等待复用缓存，还是将任务送往别处。
+
+30
+00:01:56.546 --> 00:01:59.378 line:92% position:50% align:center size:92%
+缓存感知不代表始终选择 A。
+
+31
+00:02:00.850 --> 00:02:02.749 line:92% position:50% align:center size:92%
+预填充阶段处理提示词。
+
+32
+00:02:02.749 --> 00:02:04.647 line:92% position:50% align:center size:92%
+解码阶段生成输出 token。
+
+33
+00:02:04.647 --> 00:02:07.582 line:92% position:50% align:center size:92%
+分离资源池后，两个阶段可以独立扩缩容。
+
+34
+00:02:07.582 --> 00:02:10.171 line:92% position:50% align:center size:92%
+跟随同一个请求走过两个阶段。
+
+35
+00:02:10.171 --> 00:02:15.867 line:92% position:50% align:center size:92%
+它的状态必须传到解码端；那里不是另起一个无关任务。
+
+36
+00:02:15.867 --> 00:02:20.527 line:92% position:50% align:center size:92%
+这种分离有助于资源利用，但也增加了协调工作。
+
+37
+00:02:22.050 --> 00:02:25.241 line:92% position:50% align:center size:92%
+假设正在逐步发布新的服务修订版本。
+
+38
+00:02:25.241 --> 00:02:30.448 line:92% position:50% align:center size:92%
+如果匹配的解码组件不可用，只有预填充组件就绪还不够。
+
+39
+00:02:30.448 --> 00:02:35.318 line:92% position:50% align:center size:92%
+配置发布筛选器后，修订版本感知路由
+会让一个请求保持在同一修订版本内。
+
+40
+00:02:35.318 --> 00:02:38.173 line:92% position:50% align:center size:92%
+当前指南将此插件标为 Alpha。
+
+41
+00:02:38.173 --> 00:02:42.372 line:92% position:50% align:center size:92%
+新组件对准备就绪时，旧组件对仍继续服务。
+
+42
+00:02:42.372 --> 00:02:46.571 line:92% position:50% align:center size:92%
+重点是协调发布，而不是承诺所有故障都会消失。
+
+43
+00:02:49.750 --> 00:02:56.553 line:92% position:50% align:center size:92%
+如果你运营共享模型容量，并面临突发流量、
+重复上下文或分离资源池升级，可以考虑 llm-d。
+
+44
+00:02:56.553 --> 00:03:02.989 line:92% position:50% align:center size:92%
+如果一台服务器已满足需求，
+增加基础设施可能只会增加工作，并未解决问题。
+
+45
+00:03:02.989 --> 00:03:05.012 line:92% position:50% align:center size:92%
+先明确限制因素。
+
+46
+00:03:05.012 --> 00:03:07.034 line:92% position:50% align:center size:92%
+再选择控制方式。
+
+47
+00:03:07.034 --> 00:03:09.057 line:92% position:50% align:center size:92%
+更快的推理很有用。
+
+48
+00:03:09.057 --> 00:03:12.183 line:92% position:50% align:center size:92%
+可预测的服务还需要运行策略。
