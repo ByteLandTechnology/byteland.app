@@ -1,0 +1,257 @@
+WEBVTT
+
+NOTE R7 phrase-balanced reflow. Timing within measured narration sections remains approximate; no forced word alignment.
+
+1
+00:00:04.550 --> 00:00:07.147 line:92% position:50% align:center size:92%
+A coding agent sends several long requests.
+
+2
+00:00:07.147 --> 00:00:09.439 line:92% position:50% align:center size:92%
+A person asks one short question.
+
+3
+00:00:09.439 --> 00:00:11.731 line:92% position:50% align:center size:92%
+Both share the same model servers.
+
+4
+00:00:11.731 --> 00:00:14.939 line:92% position:50% align:center size:92%
+The servers are working,
+but the person is waiting.
+
+5
+00:00:14.939 --> 00:00:17.537 line:92% position:50% align:center size:92%
+The problem is not necessarily the model.
+
+6
+00:00:17.537 --> 00:00:19.802 line:92% position:50% align:center size:92%
+It can be how the service admits work,
+
+7
+00:00:19.802 --> 00:00:22.579 line:92% position:50% align:center size:92%
+selects a server, and keeps requests moving.
+
+8
+00:00:24.050 --> 00:00:25.736 line:92% position:50% align:center size:92%
+Follow three decisions.
+
+9
+00:00:25.736 --> 00:00:28.171 line:92% position:50% align:center size:92%
+Can this request proceed now?
+
+10
+00:00:28.171 --> 00:00:30.606 line:92% position:50% align:center size:92%
+Which server should receive it?
+
+11
+00:00:30.606 --> 00:00:34.539 line:92% position:50% align:center size:92%
+During an upgrade, will its
+processing path remain compatible?
+
+12
+00:00:34.539 --> 00:00:38.473 line:92% position:50% align:center size:92%
+Flow control, routing, and rollout
+coordination answer different questions.
+
+13
+00:00:38.473 --> 00:00:41.657 line:92% position:50% align:center size:92%
+A new destination does not create capacity.
+
+14
+00:00:41.657 --> 00:00:45.590 line:92% position:50% align:center size:92%
+A good queue cannot fix an
+incompatible processing path.
+
+15
+00:00:47.050 --> 00:00:49.972 line:92% position:50% align:center size:92%
+llm-d already supported cache-aware routing
+
+16
+00:00:49.972 --> 00:00:52.445 line:92% position:50% align:center size:92%
+and separate prefill and decode pools.
+
+17
+00:00:52.445 --> 00:00:55.126 line:92% position:50% align:center size:92%
+Version 1.0, announced on October twentieth,
+
+18
+00:00:55.126 --> 00:00:57.806 line:92% position:50% align:center size:92%
+puts more emphasis on
+operating that service:
+
+19
+00:00:57.806 --> 00:01:01.724 line:92% position:50% align:center size:92%
+shared traffic, stable configuration,
+and coordinated upgrades.
+
+20
+00:01:01.724 --> 00:01:06.256 line:92% position:50% align:center size:92%
+It works with engines
+such as vLLM and SGLang.
+
+21
+00:01:06.256 --> 00:01:09.924 line:92% position:50% align:center size:92%
+It is not a new language model.
+
+22
+00:01:11.550 --> 00:01:13.343 line:92% position:50% align:center size:92%
+With a configured policy,
+
+23
+00:01:13.343 --> 00:01:17.337 line:92% position:50% align:center size:92%
+requests can enter separate
+flows by tenant and priority.
+
+24
+00:01:17.337 --> 00:01:21.927 line:92% position:50% align:center size:92%
+Dispatch selects priority first,
+then shares turns within a band.
+
+25
+00:01:21.927 --> 00:01:28.513 line:92% position:50% align:center size:92%
+At saturation, work can wait at the router
+instead of piling into busy server queues.
+
+26
+00:01:28.513 --> 00:01:31.506 line:92% position:50% align:center size:92%
+The default still resembles
+first-come, first-served.
+
+27
+00:01:31.506 --> 00:01:33.701 line:92% position:50% align:center size:92%
+These policies require configuration.
+
+28
+00:01:33.701 --> 00:01:36.695 line:92% position:50% align:center size:92%
+They do not create extra capacity.
+
+29
+00:01:38.550 --> 00:01:40.716 line:92% position:50% align:center size:92%
+Now follow one agent request.
+
+30
+00:01:40.716 --> 00:01:43.216 line:92% position:50% align:center size:92%
+Server A holds its cached prefix.
+
+31
+00:01:43.216 --> 00:01:46.048 line:92% position:50% align:center size:92%
+Returning there can avoid
+repeated prompt work.
+
+32
+00:01:46.048 --> 00:01:49.547 line:92% position:50% align:center size:92%
+But A may be busy while B has room.
+
+33
+00:01:49.547 --> 00:01:52.380 line:92% position:50% align:center size:92%
+The router considers
+cache locality and load.
+
+34
+00:01:52.380 --> 00:01:56.546 line:92% position:50% align:center size:92%
+There is a trade-off: waiting for
+reuse versus sending work elsewhere.
+
+35
+00:01:56.546 --> 00:01:59.378 line:92% position:50% align:center size:92%
+Cache-aware does not mean always choose A.
+
+36
+00:02:00.850 --> 00:02:02.749 line:92% position:50% align:center size:92%
+Prefill processes the prompt.
+
+37
+00:02:02.749 --> 00:02:04.647 line:92% position:50% align:center size:92%
+Decode produces output tokens.
+
+38
+00:02:04.647 --> 00:02:07.582 line:92% position:50% align:center size:92%
+Separate pools let these
+phases scale independently.
+
+39
+00:02:07.582 --> 00:02:10.171 line:92% position:50% align:center size:92%
+Follow the same request through both.
+
+40
+00:02:10.171 --> 00:02:15.867 line:92% position:50% align:center size:92%
+Its state must reach the decode side;
+it does not start an unrelated job there.
+
+41
+00:02:15.867 --> 00:02:20.527 line:92% position:50% align:center size:92%
+This separation can help resource use,
+but it also adds coordination work.
+
+42
+00:02:22.050 --> 00:02:25.241 line:92% position:50% align:center size:92%
+Suppose a new serving
+revision is rolling out.
+
+43
+00:02:25.241 --> 00:02:27.532 line:92% position:50% align:center size:92%
+A ready prefill component is not enough
+
+44
+00:02:27.532 --> 00:02:30.448 line:92% position:50% align:center size:92%
+if its matching decode
+component is unavailable.
+
+45
+00:02:30.448 --> 00:02:32.339 line:92% position:50% align:center size:92%
+With the rollout screener configured,
+
+46
+00:02:32.339 --> 00:02:35.318 line:92% position:50% align:center size:92%
+revision-aware routing keeps
+a request inside one revision.
+
+47
+00:02:35.318 --> 00:02:38.173 line:92% position:50% align:center size:92%
+The current guide marks this plugin Alpha.
+
+48
+00:02:38.173 --> 00:02:42.372 line:92% position:50% align:center size:92%
+The old pair keeps serving while
+the new pair becomes ready.
+
+49
+00:02:42.372 --> 00:02:46.571 line:92% position:50% align:center size:92%
+Coordinated rollout is the lesson—not a
+promise that every failure disappears.
+
+50
+00:02:49.750 --> 00:02:52.759 line:92% position:50% align:center size:92%
+Consider llm-d when you
+operate shared model capacity
+
+51
+00:02:52.759 --> 00:02:56.553 line:92% position:50% align:center size:92%
+and face bursty traffic, repeated
+context, or split-pool upgrades.
+
+52
+00:02:56.553 --> 00:02:59.081 line:92% position:50% align:center size:92%
+If one server already meets your needs,
+
+53
+00:02:59.081 --> 00:03:02.989 line:92% position:50% align:center size:92%
+more infrastructure may add
+work without solving a problem.
+
+54
+00:03:02.989 --> 00:03:05.012 line:92% position:50% align:center size:92%
+First name the constraint.
+
+55
+00:03:05.012 --> 00:03:07.034 line:92% position:50% align:center size:92%
+Then choose the control.
+
+56
+00:03:07.034 --> 00:03:09.057 line:92% position:50% align:center size:92%
+Faster inference is useful.
+
+57
+00:03:09.057 --> 00:03:12.183 line:92% position:50% align:center size:92%
+A predictable service
+needs an operating policy.

@@ -1,0 +1,202 @@
+WEBVTT
+
+NOTE R7 phrase-balanced reflow. Timing within measured narration sections remains approximate; no forced word alignment.
+
+1
+00:00:04.550 --> 00:00:07.147 line:92% position:50% align:center size:92%
+一個程式設計智能體發出多個長請求。
+
+2
+00:00:07.147 --> 00:00:09.439 line:92% position:50% align:center size:92%
+一位使用者提出一個簡短問題。
+
+3
+00:00:09.439 --> 00:00:11.731 line:92% position:50% align:center size:92%
+它們共用同一組模型伺服器。
+
+4
+00:00:11.731 --> 00:00:14.939 line:92% position:50% align:center size:92%
+伺服器正在工作，但使用者仍在等待。
+
+5
+00:00:14.939 --> 00:00:17.537 line:92% position:50% align:center size:92%
+問題不一定出在模型。
+
+6
+00:00:17.537 --> 00:00:22.579 line:92% position:50% align:center size:92%
+也可能在於服務如何接納任務、
+選擇伺服器，並持續推進請求。
+
+7
+00:00:24.050 --> 00:00:25.736 line:92% position:50% align:center size:92%
+來看三個決策。
+
+8
+00:00:25.736 --> 00:00:28.171 line:92% position:50% align:center size:92%
+這個請求現在能繼續處理嗎？
+
+9
+00:00:28.171 --> 00:00:30.606 line:92% position:50% align:center size:92%
+應由哪台伺服器接收？
+
+10
+00:00:30.606 --> 00:00:34.539 line:92% position:50% align:center size:92%
+升級期間，它的處理路徑還能保持相容嗎？
+
+11
+00:00:34.539 --> 00:00:38.473 line:92% position:50% align:center size:92%
+流量控制、路由和發布協調回答的是不同問題。
+
+12
+00:00:38.473 --> 00:00:41.657 line:92% position:50% align:center size:92%
+更換目標伺服器並不會創造容量。
+
+13
+00:00:41.657 --> 00:00:45.590 line:92% position:50% align:center size:92%
+再好的佇列也無法修復不相容的處理路徑。
+
+14
+00:00:47.050 --> 00:00:52.445 line:92% position:50% align:center size:92%
+llm-d 早已支援快取感知路由，
+以及分離的預填充和解碼資源池。
+
+15
+00:00:52.445 --> 00:01:01.724 line:92% position:50% align:center size:92%
+10月20日發布的1.0版，更強調服務維運：
+共享流量、穩定設定和協調升級。
+
+16
+00:01:01.724 --> 00:01:06.256 line:92% position:50% align:center size:92%
+它可與 vLLM、SGLang 等引擎配合使用。
+
+17
+00:01:06.256 --> 00:01:09.924 line:92% position:50% align:center size:92%
+它不是一個新的語言模型。
+
+18
+00:01:11.550 --> 00:01:17.337 line:92% position:50% align:center size:92%
+設定策略後，可按租戶和優先級將請求分入不同流。
+
+19
+00:01:17.337 --> 00:01:21.927 line:92% position:50% align:center size:92%
+排程先看優先級，再在同一優先級內輪流分配。
+
+20
+00:01:21.927 --> 00:01:28.513 line:92% position:50% align:center size:92%
+達到飽和時，任務可以在路由器等待，
+而不是堆入繁忙伺服器的佇列。
+
+21
+00:01:28.513 --> 00:01:31.506 line:92% position:50% align:center size:92%
+預設行為仍類似先到先服務。
+
+22
+00:01:31.506 --> 00:01:33.701 line:92% position:50% align:center size:92%
+這些策略需要設定。
+
+23
+00:01:33.701 --> 00:01:36.695 line:92% position:50% align:center size:92%
+它們不會創造額外容量。
+
+24
+00:01:38.550 --> 00:01:40.716 line:92% position:50% align:center size:92%
+現在跟隨一個智能體請求。
+
+25
+00:01:40.716 --> 00:01:43.216 line:92% position:50% align:center size:92%
+伺服器 A 保存著它的前綴快取。
+
+26
+00:01:43.216 --> 00:01:46.048 line:92% position:50% align:center size:92%
+返回 A 可以避免重複處理提示詞。
+
+27
+00:01:46.048 --> 00:01:49.547 line:92% position:50% align:center size:92%
+但 A 可能繁忙，而 B 還有空餘容量。
+
+28
+00:01:49.547 --> 00:01:52.380 line:92% position:50% align:center size:92%
+路由器會考慮快取位置和負載。
+
+29
+00:01:52.380 --> 00:01:56.546 line:92% position:50% align:center size:92%
+這裡需要權衡：等待重用快取，還是將任務送往別處。
+
+30
+00:01:56.546 --> 00:01:59.378 line:92% position:50% align:center size:92%
+快取感知不代表始終選擇 A。
+
+31
+00:02:00.850 --> 00:02:02.749 line:92% position:50% align:center size:92%
+預填充階段處理提示詞。
+
+32
+00:02:02.749 --> 00:02:04.647 line:92% position:50% align:center size:92%
+解碼階段產生輸出 token。
+
+33
+00:02:04.647 --> 00:02:07.582 line:92% position:50% align:center size:92%
+分離資源池後，兩個階段可以獨立擴縮容。
+
+34
+00:02:07.582 --> 00:02:10.171 line:92% position:50% align:center size:92%
+跟隨同一個請求走過兩個階段。
+
+35
+00:02:10.171 --> 00:02:15.867 line:92% position:50% align:center size:92%
+它的狀態必須傳到解碼端；那裡不是另起一個無關任務。
+
+36
+00:02:15.867 --> 00:02:20.527 line:92% position:50% align:center size:92%
+這種分離有助於資源利用，但也增加了協調工作。
+
+37
+00:02:22.050 --> 00:02:25.241 line:92% position:50% align:center size:92%
+假設正在逐步發布新的服務修訂版本。
+
+38
+00:02:25.241 --> 00:02:30.448 line:92% position:50% align:center size:92%
+如果配對的解碼元件不可用，只有預填充元件就緒還不夠。
+
+39
+00:02:30.448 --> 00:02:35.318 line:92% position:50% align:center size:92%
+設定發布篩選器後，修訂版本感知路由
+會讓一個請求保持在同一修訂版本內。
+
+40
+00:02:35.318 --> 00:02:38.173 line:92% position:50% align:center size:92%
+目前指南將此外掛標為 Alpha。
+
+41
+00:02:38.173 --> 00:02:42.372 line:92% position:50% align:center size:92%
+新元件對準備就緒時，舊元件對仍繼續服務。
+
+42
+00:02:42.372 --> 00:02:46.571 line:92% position:50% align:center size:92%
+重點是協調發布，而不是承諾所有故障都會消失。
+
+43
+00:02:49.750 --> 00:02:56.553 line:92% position:50% align:center size:92%
+如果你營運共享模型容量，並面臨突發流量、
+重複上下文或分離資源池升級，可以考慮 llm-d。
+
+44
+00:02:56.553 --> 00:03:02.989 line:92% position:50% align:center size:92%
+如果一台伺服器已滿足需求，
+增加基礎設施可能只會增加工作，並未解決問題。
+
+45
+00:03:02.989 --> 00:03:05.012 line:92% position:50% align:center size:92%
+先明確限制因素。
+
+46
+00:03:05.012 --> 00:03:07.034 line:92% position:50% align:center size:92%
+再選擇控制方式。
+
+47
+00:03:07.034 --> 00:03:09.057 line:92% position:50% align:center size:92%
+更快的推理很有用。
+
+48
+00:03:09.057 --> 00:03:12.183 line:92% position:50% align:center size:92%
+可預測的服務還需要運行策略。
